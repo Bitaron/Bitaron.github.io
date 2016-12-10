@@ -3,26 +3,16 @@
     <head>
 
     </head>
-    <body  style="background-color: #2C353A">
-        <canvas id="c1" width="200" height="200" ></canvas>
-        <canvas id="c2" width="200" height="200" ></canvas>
-  
-        <svg width="500" height="100">
-        <circle cx="50" cy="50" r="40" stroke="#ffffff" stroke-width="9" fill="#74daec" />
-        </svg>
-        <p> Hail Trump!</p>
-        <script>
-   var c1 = document.getElementById("c1");
-   var c1_context = c1.getContext("2d");
-   c1_context.fillStyle = "#ffffff";
-   c1_context.fillRect(0, 0, 100, 100);
-   
-      var c2 = document.getElementById("c2");
-   var c2_context = c2.getContext("2d");
-   c2_context.fillStyle = "#87ec00";
-   c2_context.fillRect(0, 0, 100, 100);
+    <body  style="background-color: ">
 
-</script>
+        <div id='d1' style="position:absolute; top:140px; left:0px; z-index:1">  
+            <canvas id='c2' > </canvas>
+        </div>
+
+
+
+
+        <script src="app.js"> </script>
     </body>
-   
+
 </html>
