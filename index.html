@@ -4,15 +4,32 @@
 
     </head>
     <body  style="background-color: ">
-
-        <div id='d1' style="position:absolute; top:140px; left:0px; z-index:1">  
+        
+        <h1 style="color: #0099ff ">UNDER CONSTRUCTION, PLEASE VISIT LATER.</h1>
+        <p >Currently animation using HTML5 canvas in progress.</p>
+        <div id='d1' style="position:absolute; top:160px; left:0px; z-index:1">  
             <canvas id='c2' > </canvas>
         </div>
 
+        <div id='d1' style="position:absolute; top:220px; left:100px; z-index:1">  
+            <canvas id='c3' > </canvas>
+        </div>
 
 
-
-        <script src="app.js"> </script>
+        <script>
+            (function () {
+                'use strict';
+                var c2 = document.getElementById("c2");
+                var c2_context = c2.getContext("2d");
+                c2_context.fillStyle = "";
+                c2_context.fillRect(0, 10, 100, 20);
+                
+                  var c3 = document.getElementById("c3");
+                var c3_context = c3.getContext("2d");
+                c3_context.fillStyle = "";
+                c3_context.fillRect(0, 0, 200, 20);
+            }())
+        </script>
     </body>
 
 </html>
