@@ -105,30 +105,51 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+author:
+  name   : "Renato Golia"
+  avatar : "/assets/images/rg.jpg"
+  bio    : >-
+    My name is Renato.
+
+    I was born in Naples, Italy but I've been living in Stockholm, Sweden since 2008.
+    I love working with .NET and AWS and to combine the two together.
+    You can read more about me in the [About me](/about/) section.
+  location: "Stockholm, Sweden"
+  twitter: "Kralizek"
+  linkedin: "renatogolia"
+  github: "Kralizek"
+  stackoverflow: "82540"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "mailto:renato@golia.tech"
+    - label: "Resume"
+      icon: "far fa-fw fa-file-pdf"
+      url: "/assets/files/resume-renato-golia.pdf"
+  # name             : "Your Name"
+  # avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  # bio              : "I am an **amazing** person."
+  # location         : "Somewhere"
+  # email            :
+  # links:
+  #   - label: "Email"
+  #     icon: "fas fa-fw fa-envelope-square"
+  #     # url: "mailto:your.name@email.com"
+  #   - label: "Website"
+  #     icon: "fas fa-fw fa-link"
+  #     # url: "https://your-website.com"
+  #   - label: "Twitter"
+  #     icon: "fab fa-fw fa-twitter-square"
+  #     # url: "https://twitter.com/"
+  #   - label: "Facebook"
+  #     icon: "fab fa-fw fa-facebook-square"
+  #     # url: "https://facebook.com/"
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     # url: "https://github.com/"
+  #   - label: "Instagram"
+  #     icon: "fab fa-fw fa-instagram"
+  #     # url: "https://instagram.com/"
 
 # Site Footer
 footer:
