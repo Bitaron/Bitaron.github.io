@@ -1,0 +1,192 @@
+---
+layout: default
+---
+
+{% assign words = content | number_of_words %}
+{% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
+
+{% comment %}Look up the series stub (first in _series/, then fallback to _series_drafts/ for local dev){% endcomment %}
+{% if page.series %}
+  {% assign _series_stub = site.series | where: "series_name", page.series | first %}
+  {% unless _series_stub %}{% assign _series_stub = site.series_drafts | where: "series_name", page.series | first %}{% endunless %}
+{% endif %}
+
+<!-- Breadcrumbs JSON-LD (invisible, SEO only) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ site.data.ui.nav_home }}",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ site.data.ui.articles_title }}",
+      "item": "{{ '/articles/' | absolute_url }}"
+    }{% if _series_stub %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.series | escape }}",
+      "item": "{{ _series_stub.url | absolute_url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% endif %}
+  ]
+}
+</script>
+
+<article class="container mt-5">
+    <div class="article-container p-4">
+        <header class="text-center mb-4">
+            <h1 class="display-5">{{ page.title }}</h1>
+            <p class="text-muted">{% if page.difficulty %}{% case page.difficulty %}{% when "beginner" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_beginner %}{% when "intermediate" %}{% assign diff_icon = "☁️" %}{% assign diff_label = site.data.ui.diff_intermediate %}{% when "advanced" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_advanced %}{% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}{% endcase %}<span class="difficulty-badge difficulty-{{ page.difficulty }}"><span aria-hidden="true">{{ diff_icon }}</span> {{ diff_label }}</span> &nbsp;·&nbsp; {% endif %}{{ site.data.ui.post_published }} {{ page.date | date: "%m/%d/%Y" }}{% if page.last_modified_at %} &nbsp;·&nbsp; <i class="fas fa-pen-to-square" aria-hidden="true"></i> {{ site.data.ui.post_updated }} {{ page.last_modified_at | date: "%m/%d/%Y" }}{% endif %} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
+            {% assign banner_src = page.banner | default: site.default_banner %}
+            {% assign cover_src = page.image | default: site.default_image %}
+            {% if banner_src and banner_src != "" %}
+            <img src="{{ banner_src | relative_url }}" class="article-banner" alt="{{ page.title }}" fetchpriority="high" decoding="async">
+            {% elsif cover_src and cover_src != "" %}
+            <img src="{{ cover_src | relative_url }}" class="article-cover" alt="{{ page.title }}" fetchpriority="high" decoding="async">
+            {% endif %}
+        </header>
+
+        {% if page.placeholder %}
+        <div class="alert-placeholder">
+            <i class="fas fa-robot" aria-hidden="true"></i> {{ site.data.ui.post_ai_disclaimer }}
+        </div>
+        {% endif %}
+
+        <!-- Table of contents (auto-generated via JS, shown only if 3+ headings) -->
+        <nav id="toc-wrapper" aria-label="{{ site.data.ui.post_toc }}" style="display: none;">
+            <details class="toc-container" open>
+                <summary>{{ site.data.ui.post_toc }}</summary>
+                <ol class="toc-list" id="toc-list"></ol>
+            </details>
+        </nav>
+
+        <section class="content">
+            {{ content }}
+        </section>
+
+        {% if page.series %}
+        {% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+        {% if series_posts.size > 0 %}
+        <div class="series-block mt-4">
+            <p class="series-intro"><i class="fas fa-layer-group" aria-hidden="true"></i> {{ site.data.ui.post_series_intro }}</p>
+            <p class="series-title"><strong>{{ page.series }}</strong> &mdash; {{ site.data.ui.post_series_part }} {{ page.series_part }} {{ site.data.ui.post_series_on }} {{ series_posts.size }}</p>
+            <ol class="series-list">
+                {% for s_post in series_posts %}
+                <li class="{% if s_post.url == page.url %}series-current{% endif %}">
+                    {% if s_post.url == page.url %}<span>{{ s_post.title }}</span>
+                    {% else %}<a href="{{ s_post.url | relative_url }}">{{ s_post.title }}</a>{% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        <!-- Share buttons -->
+        {% assign share_url = page.url | absolute_url %}
+        {% assign share_title = page.title | uri_escape %}
+        <div class="post-share">
+            <span class="post-share-label"><i class="fas fa-share-nodes" aria-hidden="true"></i> {{ site.data.ui.post_share_prompt }}</span>
+            <a class="post-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | uri_escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.ui.post_share_linkedin }}">
+                <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a class="post-share-btn" href="https://bsky.app/intent/compose?text={{ share_title }}%20{{ share_url | uri_escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.ui.post_share_bluesky }}">
+                <i class="fas fa-cloud" aria-hidden="true"></i> Bluesky
+            </a>
+            <a class="post-share-btn" href="https://twitter.com/intent/tweet?text={{ share_title }}&url={{ share_url | uri_escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.ui.post_share_x }}">
+                <i class="fab fa-x-twitter" aria-hidden="true"></i> X
+            </a>
+            <button type="button" class="post-share-btn post-share-copy" data-url="{{ share_url }}" data-copied-label="{{ site.data.ui.post_share_copied }}">
+                <i class="fas fa-link" aria-hidden="true"></i> <span class="post-share-copy-label">{{ site.data.ui.post_share_copy }}</span>
+            </button>
+        </div>
+
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+            <a href="{{ '/articles/' | relative_url }}#{{ tag | slugify }}" class="tag-badge">
+                <i class="fas fa-tag" aria-hidden="true"></i> {{ tag }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</article>
+
+{% assign related_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% unless post.url == page.url %}
+    {% assign common = 0 %}
+    {% for tag in post.tags %}
+      {% if page.tags contains tag %}
+        {% assign common = common | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if common >= 1 %}
+      {% assign related_posts = related_posts | push: post %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+{% assign related_posts = related_posts | slice: 0, 3 %}
+
+{% if related_posts.size > 0 %}
+<section class="container mt-4 mb-5 related-posts">
+    <div class="section-header">
+        <h2 class="hover-underline-animation">{{ site.data.ui.post_related }}</h2>
+    </div>
+    <div class="row">
+        {% for post in related_posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% assign related_img = post.image | default: site.default_image %}
+                {% if related_img and related_img != "" %}
+                <img src="{{ related_img | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="btn btn-primary">{{ site.data.ui.post_read_more }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Image zoom modal -->
+<div class="modal fade modal-zoom" id="imageModal" tabindex="-1" role="dialog" aria-label="Image agrandie" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-zoom-inner">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include mermaid.html %}
+<script src="{{ '/assets/js/post.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

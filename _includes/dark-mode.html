@@ -1,0 +1,48 @@
+<script>
+(function() {
+    var html = document.documentElement;
+
+    // localStorage may throw (private browsing, storage disabled, file:// context).
+    function readTheme() {
+        try { return localStorage.getItem('theme'); } catch (e) { return null; }
+    }
+    function writeTheme(value) {
+        try { localStorage.setItem('theme', value); } catch (e) { /* silent */ }
+    }
+
+    var stored = readTheme();
+    if (stored) {
+        html.setAttribute('data-theme', stored);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        function isDark() {
+            return html.getAttribute('data-theme') === 'dark' ||
+                (!html.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+
+        function updateIcon() {
+            var icon = toggle.querySelector('i');
+            if (icon) icon.className = isDark() ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        updateIcon();
+
+        toggle.addEventListener('click', function() {
+            var next = isDark() ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            writeTheme(next);
+            updateIcon();
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            if (!readTheme()) updateIcon();
+        });
+    });
+})();
+</script>

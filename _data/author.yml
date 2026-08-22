@@ -1,0 +1,39 @@
+# ─────────────────────────────────────────────
+#  Author configuration — edit this file first!
+# ─────────────────────────────────────────────
+
+name: Kamruzzaman
+name_display: Sk. Kamruzzaman
+role: Senior Software Engineer
+tagline: "Backend Architecture · Kubernetes · Engineering Leadership"
+# Profile picture — replace with your own (recommended: square ~300x300).
+# Out of the box: a self-hosted DiceBear avatar (lorelei style, ~5KB SVG).
+# Convention: drop personal images in assets/about/ to keep the asset tree tidy.
+photo: assets/about/photo.svg
+photo_alt: "Profile picture of Sk. Kamruzzaman"
+linkedin: https://linkedin.com/in/bitaron
+github: https://github.com/Bitaron
+email_user: bitaron90
+email_domain: gmail.com
+bio: >-
+  I am a senior software engineer who designs resilient backend platforms,
+  Kubernetes-based infrastructure, and event-driven systems. I lead technical
+  decisions, build high-concurrency services, and help teams deliver with
+  automation, clear architecture, and strong testing practices.
+sign_off: "Kamruzzaman"
+# Interests — each one shows a hover preview image and opens fullscreen on click.
+# The example uses random thematic photos from loremflickr (locked seed for
+# stability). Replace with your own files in assets/about/ when ready.
+interests:
+  - label: distributed systems
+    image: assets/about/photo.svg
+    separator: ","
+  - label: Kubernetes
+    image: assets/about/photo.svg
+    separator: ","
+  - label: clean architecture
+    image: assets/about/photo.svg
+    separator: ","
+  - label: open source
+    image: assets/about/photo.svg
+    separator: "."

@@ -1,0 +1,22 @@
+/* Pagination */
+.page-link {
+  color: var(--color-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.page-item.active .page-link {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #fff;
+}
+
+.page-link:hover {
+  color: var(--color-primary);
+}
+
+.page-item.disabled .page-link {
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}

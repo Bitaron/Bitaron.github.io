@@ -1,0 +1,33 @@
+/* ============================================================
+   SCSS MIXINS
+   Shared helpers used by multiple components.
+   ============================================================ */
+
+// Mixin for "badge" components (pill-shaped, hoverable).
+// Defaults match .tag-badge; override parameters for .print-btn etc.
+@mixin badge-style(
+  $bg-color: var(--color-card-bg),
+  $border-color: rgba(0, 59, 130, 0.25),
+  $text-color: var(--color-secondary),
+  $padding: 0.3rem 0.75rem,
+  $font-size: 0.85rem,
+  $display: inline-block,
+  $border-width: 1.5px
+) {
+  display: $display;
+  background-color: $bg-color;
+  color: $text-color !important;
+  border: $border-width solid $border-color;
+  padding: $padding;
+  border-radius: 20px;
+  font-size: $font-size;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff !important;
+  }
+}

@@ -1,0 +1,97 @@
+/* ─────────────────────────────────────────────────────────────
+   TABLES — Card aesthetic
+   Articles  : post.js wraps tables in .table-wrapper > .table-scroll
+   About     : .stacked-card table.table override
+   ───────────────────────────────────────────────────────────── */
+
+/* Wrapper in articles: outer = rounded corners + shadow,
+   inner = horizontal scroll without breaking the corners */
+.content .table-wrapper {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-light);
+  margin: 1.5rem 0;
+}
+.content .table-scroll {
+  overflow-x: auto;
+}
+
+/* Shared base */
+.content .table-wrapper table,
+.stacked-card table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 0.92em;
+}
+
+/* Header: soft tint of --color-primary on card background,
+   text --color-primary like site headings,
+   bottom separator to anchor the header row */
+.content .table-wrapper table thead th,
+.stacked-card table.table thead th {
+  background-color: var(--table-header-bg) !important;
+  color: var(--color-primary) !important;
+  padding: 10px 16px;
+  font-weight: 700;
+  border: none !important;
+  border-bottom: 2px solid var(--color-primary) !important;
+  border-right: 1px solid var(--color-border) !important;
+  text-align: left;
+}
+.content .table-wrapper table thead th:last-child,
+.stacked-card table.table thead th:last-child {
+  border-right: none !important;
+}
+
+/* Body cells */
+.content .table-wrapper table tbody td,
+.stacked-card table.table tbody td {
+  padding: 9px 16px;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text);
+  background-color: var(--color-card-bg);
+}
+.content .table-wrapper table tbody td:last-child,
+.stacked-card table.table tbody td:last-child {
+  border-right: none;
+}
+
+/* Alternating rows */
+.content .table-wrapper table tbody tr:nth-child(even) td,
+.stacked-card table.table tbody tr:nth-child(even) td {
+  background-color: var(--color-background);
+}
+
+/* Hover */
+.content .table-wrapper table tbody tr:hover td,
+.stacked-card table.table tbody tr:hover td {
+  background-color: rgba(0, 59, 130, 0.14);
+}
+
+/* Styling for sortable table headers with Font Awesome icons (about page) */
+th {
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+}
+
+th[tabindex]:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -2px;
+}
+
+th .sort-arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+  visibility: hidden;
+  transition: visibility 0.2s;
+}
+
+th:hover .sort-arrow,
+th[data-dir] .sort-arrow {
+  visibility: visible;
+}

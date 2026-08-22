@@ -1,0 +1,139 @@
+/* ============================================================
+   IMPRESSION — Base (page, variables, masquage, containers)
+   ============================================================ */
+
+/* En-tete visible uniquement a l'impression */
+.print-header { display: none; }
+
+@media print {
+  /* === PAGE === */
+  @page { size: A4; margin: 15mm 20mm; }
+
+  /* Force light mode variables regardless of [data-theme="dark"] */
+  :root,
+  [data-theme="dark"] {
+    --color-primary: #081a34 !important;
+    --color-secondary: #003b82 !important;
+    --color-background: #ffffff !important;
+    --color-card-bg: #ffffff !important;
+    --color-text: #222222 !important;
+    --color-text-muted: #666666 !important;
+    --color-border: #dee2e6 !important;
+  }
+
+  /* === BASE === */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    background: #fff !important;
+    color: #222 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  /* Empecher le navigateur d'imprimer les URLs apres les liens */
+  a::after { content: none !important; }
+
+  /* === EN-TETE PRINT === */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 0.8cm;
+    padding-bottom: 0.4cm;
+    border-bottom: 2px solid #003b82;
+  }
+  .print-header .print-name {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #111;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .print-header .print-subtitle {
+    font-size: 11pt;
+    color: #444;
+    margin: 3pt 0 1pt;
+  }
+  .print-header .print-tagline {
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #666;
+    margin: 0;
+  }
+
+  /* === MASQUER les elements inutiles === */
+  #description,
+  #profile .print-btn,
+  #applied-skills,
+  .navbar,
+  .skip-link,
+  #back-to-top,
+  .toggle-section-btn,
+  .hover-image,
+  #imageModal,
+  .modal-backdrop,
+  .cloud-footer,
+  footer,
+  .cert-link,
+  .card-icon,
+  .poste-logo,
+  .mission-logo,
+  .sort-arrow,
+  /* Articles */
+  .article-banner,
+  .article-cover,
+  #toc-wrapper,
+  .related-posts,
+  .post-tags,
+  .print-btn,
+  .giscus-comments { display: none !important; }
+
+  /* Nuclear hide: some PDF renderers + dark OS ignore display:none on bg-image elements */
+  .cloud-footer,
+  footer,
+  footer.cloud-footer {
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  /* Hide all iframes (Giscus, embeds) in print */
+  iframe,
+  .giscus { display: none !important; }
+
+  /* === CONTAINERS === */
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .container + .container { margin-top: 0.6em !important; }
+
+  /* Neutralise Bootstrap mt-5 / mt-4 */
+  .mt-5, .mt-4 { margin-top: 0 !important; }
+
+  /* Wrapper stacked-cards */
+  .stacked-cards {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

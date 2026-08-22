@@ -1,0 +1,8 @@
+{% assign footer_wave = site.static_files | where: "path", "/assets/clouds-footer.svg" | first %}
+<footer class="cloud-footer">
+  {% if footer_wave %}<div class="footer-wave" aria-hidden="true"></div>{% endif %}
+  <div class="footer-content">
+    <p>{{ site.data.author.name_display }} - {{ site.time | date: '%Y' }}</p>
+    {% include footer-attribution.html %}
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+---
+layout: default
+---
+
+<!-- En-tete de bienvenue -->
+<header class="container mt-5 text-center">
+    <h1 class="display-4">{{ site.home_title }}</h1>
+    <p class="lead">{{ site.home_tagline }}</p>
+</header>
+
+<!-- Section Articles -->
+<section id="articles" class="container mt-5">
+    <div class="section-header">
+        <h2 class="hover-underline-animation">{{ site.data.ui.home_recent }}</h2>
+    </div>
+    <div class="row">
+        {% assign posts_list = paginator.posts | default: site.posts %}
+        {% for post in posts_list %}
+        {% assign words = post.content | number_of_words %}
+        {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
+        <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100" style="cursor:pointer;">
+                {% assign card_image = post.image | default: site.default_image %}
+                {% if card_image and card_image != "" %}
+                <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ post.title }}"{% if forloop.first %} fetchpriority="high" decoding="async"{% else %} loading="lazy"{% endif %}>
+                {% endif %}
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="{{ post.url | relative_url }}" class="stretched-link text-decoration-none">{{ post.title }}</a>
+                    </h3>
+                    {% if post.difficulty %}
+                    {% case post.difficulty %}
+                      {% when "beginner" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_beginner %}
+                      {% when "intermediate" %}{% assign diff_icon = "☁️" %}{% assign diff_label = site.data.ui.diff_intermediate %}
+                      {% when "advanced" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_advanced %}
+                      {% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}
+                    {% endcase %}
+                    <span class="difficulty-badge difficulty-{{ post.difficulty }} mb-2 d-inline-block" aria-label="{{ site.data.ui.diff_aria_prefix }} {{ diff_label }}"><span aria-hidden="true">{{ diff_icon }}</span> {{ diff_label }}</span>
+                    {% endif %}
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                    <p class="text-muted small mb-0">{{ site.data.ui.home_published }} {{ post.date | date: "%m/%d/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.home_min }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <nav aria-label="Article pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if paginator.previous_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; {{ site.data.ui.pagination_newer }}</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo; {{ site.data.ui.pagination_newer }}</span></li>
+            {% endif %}
+
+            {% for i in (1..paginator.total_pages) %}
+            <li class="page-item {% if paginator.page == i %}active{% endif %}">
+                {% if i == 1 %}
+                <a class="page-link" href="{{ '/' | relative_url }}">{{ i }}</a>
+                {% else %}
+                <a class="page-link" href="{{ site.paginate_path | replace: ':num', i | relative_url }}">{{ i }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+
+            {% if paginator.next_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">{{ site.data.ui.pagination_older }} &raquo;</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">{{ site.data.ui.pagination_older }} &raquo;</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</section>
+
+{% if site.posts.size == 0 %}
+<section class="container mt-3 text-center">
+    <p class="text-muted">{{ site.data.ui.home_no_articles }}</p>
+</section>
+{% endif %}
+
+<!-- Rechercher & Decouvrir -->
+<aside class="container mt-5 mb-5">
+    <div class="section-header mb-3">
+        <h3 class="hover-underline-animation">{{ site.data.ui.home_search }}</h3>
+    </div>
+
+    <label for="home-search-input" class="visually-hidden">{{ site.data.ui.home_search }}</label>
+    <input type="text" id="home-search-input" class="form-control form-control-lg mb-3"
+        placeholder="{{ site.data.ui.home_search_placeholder }}">
+    <div id="home-search-results" aria-live="polite" aria-atomic="true"></div>
+
+    {% if site.tags.size > 0 %}
+    <div class="tag-cloud mt-4">
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags %}
+        {% assign count = tag[1].size %}
+        {% if count >= 5 %}{% assign tag_size = "tag-xl" %}
+        {% elsif count >= 3 %}{% assign tag_size = "tag-lg" %}
+        {% elsif count >= 2 %}{% assign tag_size = "tag-md" %}
+        {% else %}{% assign tag_size = "tag-sm" %}
+        {% endif %}
+        <a href="{{ '/articles/' | relative_url }}#{{ tag[0] | slugify }}" class="tag-cloud-item {{ tag_size }}">
+            {{ tag[0] }} <span class="tag-count">{{ count }}</span>
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</aside>
+
+<script>window.SiteSearch = { noResults: {{ site.data.ui.home_no_results | jsonify }}, searchUrl: {{ '/search.json' | relative_url | jsonify }}, unavailable: {{ site.data.ui.home_search_unavailable | jsonify }} };</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+
+{{ content }}

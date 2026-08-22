@@ -1,0 +1,71 @@
+/*
+ * custom.css — Personalize your Jekyll Cirrus site
+ * ─────────────────────────────────────────────────
+ * Override any CSS variable or style here.
+ * This file is loaded AFTER the main stylesheet, so your changes take priority.
+ *
+ * HOW TO USE:
+ *   Uncomment the lines you want to change and set your own values.
+ *   No other file needs to be touched.
+ * ─────────────────────────────────────────────────
+ */
+
+:root {
+
+    /* ── COLORS ──────────────────────────────────────────────── */
+
+    /* Main dark color: navbar, headings, buttons */
+    /* --color-primary: #081a34; */
+
+    /* Accent color: links, borders, highlights */
+    /* --color-secondary: #003b82; */
+
+    /* Navbar background (supports rgba for transparency) */
+    /* --color-navbar-bg: rgba(8, 26, 52, 0.95); */
+
+    /* Page background */
+    /* --color-background: #eef2f3; */
+
+    /* Card / section background */
+    /* --color-card-bg: #ffffff; */
+
+    /* Body text */
+    /* --color-text: #333; */
+
+    /* Muted text (dates, subtitles) */
+    /* --color-text-muted: #6c757d; */
+
+    /* Borders */
+    /* --color-border: #dee2e6; */
+
+
+    /* ── TYPOGRAPHY ───────────────────────────────────────────── */
+
+    /* Main font — use any Google Fonts name loaded in default.html */
+    /* --font-main: 'Poppins', sans-serif; */
+
+
+    /* ── SHAPE ────────────────────────────────────────────────── */
+
+    /* Card / button corner radius */
+    /* --border-radius: 15px; */
+
+}
+
+
+/* ── DARK MODE OVERRIDES ──────────────────────────────────────
+   Dark mode is automatic (follows OS preference) with a manual toggle.
+   To customize dark mode colors, override variables inside [data-theme="dark"]:
+
+   [data-theme="dark"] {
+     --color-background: #your-dark-bg;
+     --color-card-bg: #your-dark-card-bg;
+     --color-text: #your-light-text;
+   }
+   ───────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────────────────────
+   Add your own custom styles below this line.
+   Example: change the footer font size, tweak card padding, etc.
+   ───────────────────────────────────────────────────────────── */

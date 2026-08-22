@@ -1,0 +1,63 @@
+<nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="dark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="{{ site.data.ui.a11y_toggle_nav }}">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="{{ '/' | relative_url }}"><i class="fas fa-cloud" aria-hidden="true"></i> {{ site.title }}</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link hover-underline-animation" href="{{ '/' | relative_url }}">{{ site.data.ui.nav_home }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-underline-animation" href="{{ '/resume/' | relative_url }}">{{ site.data.ui.nav_resume }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-underline-animation" href="{{ '/articles/' | relative_url }}">{{ site.data.ui.nav_articles }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-underline-animation" href="{{ '/about/' | relative_url }}">{{ site.data.ui.nav_about }}</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ site.data.author.linkedin }}" target="_blank"
+                    aria-label="{{ site.data.ui.a11y_linkedin }}" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>{{ site.data.ui.nav_label_linkedin }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ site.data.author.github }}" target="_blank"
+                    aria-label="{{ site.data.ui.a11y_github }}" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>{{ site.data.ui.nav_label_github }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact"
+                    data-email-user="{{ site.data.author.email_user }}" data-email-domain="{{ site.data.author.email_domain }}"
+                    aria-label="{{ site.data.ui.a11y_email }}" rel="noopener noreferrer">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>{{ site.data.ui.nav_label_email }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/feed.xml' | relative_url }}"
+                    aria-label="{{ site.data.ui.a11y_rss }}" rel="noopener noreferrer">
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                    <span>{{ site.data.ui.nav_label_rss }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <button id="theme-toggle" class="nav-link"
+                        aria-label="{{ site.data.ui.a11y_toggle_dark }}">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>{{ site.data.ui.nav_label_theme }}</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>

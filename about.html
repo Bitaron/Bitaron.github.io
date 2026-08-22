@@ -1,0 +1,29 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<section class="container mt-5">
+  <div class="row align-items-start">
+    <div class="col-md-3">
+      <img src="{{ site.data.author.photo | relative_url }}" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high" alt="{{ site.data.author.photo_alt }}">
+    </div>
+    <div class="col-md-9">
+      <h1 class="hover-underline-animation">About</h1>
+      <p class="lead">{{ site.data.author.bio }}</p>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a class="btn btn-primary" href="{{ '/resume/' | relative_url }}">View résumé</a>
+        <a class="btn btn-outline-secondary" href="{{ '/articles/' | relative_url }}">Read articles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5 mb-5">
+  <div class="section-header"><h2 class="hover-underline-animation">Focus</h2></div>
+  <div class="row g-4">
+    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h3>Architecture</h3><p>Design resilient, event-driven systems and clean service boundaries for high-concurrency platforms.</p></div></div></div>
+    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h3>Delivery</h3><p>Lead engineering teams with GitOps, automated pipelines, and a strong testing culture.</p></div></div></div>
+  </div>
+</section>

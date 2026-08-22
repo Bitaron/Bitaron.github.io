@@ -1,0 +1,115 @@
+# ──────────────────────────────────────────────────────────────
+# UI Strings — edit this file to translate the entire site
+# ──────────────────────────────────────────────────────────────
+
+# Navigation
+nav_home: "Home"
+nav_articles: "Articles"
+nav_resume: "Résumé"
+nav_about: "About"
+
+# Home page
+home_recent: "Recent Articles"
+home_search: "Search articles"
+home_search_placeholder: "Type your search..."
+home_no_articles: "No articles yet. Check back soon!"
+home_no_results: "No articles found."
+home_search_unavailable: "Search unavailable."
+home_published: "Published:"
+home_min: "min"
+
+# Pagination
+pagination_newer: "Newer"
+pagination_older: "Older"
+
+# Difficulty levels
+diff_beginner: "Beginner"
+diff_intermediate: "Intermediate"
+diff_advanced: "Advanced"
+diff_expert: "Expert"
+diff_aria_prefix: "Difficulty:"
+
+# Series
+post_series_part: "Part"
+post_series_on: "of"
+post_series_intro: "This article is part of a series"
+
+# Post / Article
+post_published: "Published:"
+post_updated: "Updated:"
+post_min_read: "min read"
+post_pdf: "PDF"
+post_save_pdf: "Save as PDF"
+post_toc: "Table of contents"
+post_related: "Related Articles"
+post_read_more: "Read more"
+post_ai_disclaimer: "AI-generated as a placeholder — not yet a real article."
+
+# About page
+about_who: "Who am I?"
+about_certifications: "Certifications"
+about_view_cert: "View certification"
+about_skills: "Technical Skills"
+about_skill_col: "Skill"
+about_level_col: "Level"
+about_experience: "Professional Experience"
+about_missions: "Missions:"
+about_context: "Project / Service Context:"
+about_responsibilities: "Responsibilities / Missions:"
+about_tech: "Technical Environment / Main Technologies Used:"
+about_key_skills: "Key Skills:"
+about_applied_skills: "Applied Skills"
+about_education: "Education"
+about_languages: "Languages"
+about_interests: "Interests"
+about_interest_image: "Interest image"
+
+# Articles page
+articles_title: "Articles"
+articles_chronological: "Chronological"
+articles_by_tags: "By tags"
+articles_by_series: "By series"
+articles_no_articles: "No articles published yet."
+
+# Series
+series_view_series: "View series"
+series_articles_label: "Series articles"
+series_no_articles: "No articles published in this series yet. Check back soon!"
+
+# Post share bar
+post_share_prompt: "Found this useful? Share:"
+post_share_linkedin: "Share on LinkedIn"
+post_share_bluesky: "Share on Bluesky"
+post_share_x: "Share on X (Twitter)"
+post_share_copy: "Copy link"
+post_share_copied: "Copied!"
+
+# 404 page
+error_404_title: "404"
+error_404_heading: "This page got lost in the clouds..."
+error_404_message: "The page you're looking for doesn't exist or has been moved."
+error_404_encouragement: "Fortunately, it's always sunny above the clouds!"
+error_404_back: "Back to home"
+
+# Footer
+footer_based_on: "Based on"
+footer_by: "by"
+
+# Accessibility
+a11y_skip: "Skip to main content"
+a11y_breadcrumb: "Breadcrumb"
+a11y_scrollable_table: "Scrollable table"
+a11y_back_to_top: "Back to top"
+a11y_toggle_dark: "Toggle dark mode"
+a11y_toggle_nav: "Toggle navigation"
+a11y_linkedin: "Open my LinkedIn profile"
+a11y_github: "Open my GitHub profile"
+a11y_email: "Send me an email"
+a11y_rss: "RSS feed"
+
+# Navbar icon labels (visible text next to icons)
+nav_label_linkedin: "LinkedIn"
+nav_label_github: "GitHub"
+nav_label_email: "Contact"
+nav_label_rss: "RSS"
+nav_label_theme: "Theme"

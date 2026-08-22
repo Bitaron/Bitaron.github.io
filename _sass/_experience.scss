@@ -1,0 +1,224 @@
+/* Section Headers */
+.section-header {
+  display: flex;
+  align-items: center;
+  z-index: 0;
+  font-size: 1.8rem;
+}
+
+.section-header h1,
+.section-header h2 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+/* Toggle button */
+.toggle-section-btn {
+  font-size: 1.2em;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-section-btn:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.toggle-section-btn i {
+  vertical-align: middle;
+}
+
+/* Section content
+   Bootstrap collapse handles show/hide and the height transition itself
+   (via the transient .collapsing class). We just keep a top margin and
+   leave overflow visible so the card shadows below don't get clipped. */
+.section-content {
+  margin-top: 10px;
+}
+
+.section-content.collapse:not(.show) {
+  display: none;
+}
+
+.section-content.collapse.show {
+  height: auto;
+}
+
+/* Interests */
+.interest {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.interest:hover,
+.interest:focus {
+  color: var(--color-secondary);
+}
+
+.interest:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Initial style for hover image */
+.hover-image {
+  position: fixed;
+  width: auto;
+  height: 350px;
+  border: 1px solid rgba(0, 59, 130, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Missions integration */
+/* Poste Section */
+.poste-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.poste-logo,
+.mission-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+/* Languages list on the about page.
+   Each item is a flex row: fixed-size flag slot on the left, language
+   description on the right. Items are spaced vertically for breathing room. */
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+}
+
+.language-text {
+  flex: 1;
+}
+
+/* The flag slot keeps a fixed footprint regardless of the flag's natural
+   aspect ratio, so the language text after it always starts at the same x. */
+.lang-flag-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.flag-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.lang-flag {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.poste-title {
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Separator */
+.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 59, 130, 0.2);
+  margin: 20px 0;
+}
+
+/* Missions Section */
+.missions-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mission-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.mission-title {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.mission-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+.mission-description p {
+  margin: 10px 0;
+}
+
+.mission-description ul {
+  margin: 10px 0 10px 20px;
+  list-style-type: disc;
+}
+
+.mission-description ul ul {
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.mission-description li {
+  margin: 5px 0;
+}
+
+/* Mobile optimization for mission-description */
+@media (max-width: 768px) {
+  .mission-description {
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  .mission-description p {
+    margin: 8px 0;
+  }
+
+  .mission-description ul {
+    margin: 8px 0 8px 5px;
+    padding-left: 0.8em;
+  }
+
+  .mission-description ul ul {
+    margin-left: 5px;
+    padding-left: 0.8em;
+  }
+
+  .toggle-section-btn { padding: 0.8rem; font-size: 1.2rem; }
+}

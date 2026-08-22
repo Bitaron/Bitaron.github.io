@@ -1,0 +1,177 @@
+/* Syntax highlighting (Rouge - base16.dark)
+   Rouge generates both <div class="highlight"> and <pre class="highlight">;
+   only position (for the copy button) and overflow on the wrapper,
+   let <pre> handle its own background/padding. */
+div.highlight {
+  position: relative;
+  overflow: visible;
+}
+pre.highlight {
+  background: #1e1e2e;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: var(--box-shadow-light);
+}
+
+/* Copy-to-clipboard button on code blocks */
+.code-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cdd6f4;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  z-index: 2;
+  font-family: var(--font-main);
+}
+.code-copy-btn:hover,
+.code-copy-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  opacity: 1;
+  outline: none;
+}
+.code-copy-btn.copied {
+  background: rgba(166, 227, 161, 0.25);
+  color: #a6e3a1;
+}
+.highlight:hover .code-copy-btn,
+.highlight:focus-within .code-copy-btn {
+  opacity: 1;
+}
+
+.highlight pre {
+  margin: 0;
+  color: #cdd6f4;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.highlight code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+article .content code {
+  background: #e8edf2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--color-secondary);
+}
+
+article .content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-fullscreen-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+  &:hover { background: rgba(0, 0, 0, 0.65); }
+}
+.mermaid:hover .mermaid-fullscreen-btn { opacity: 1; }
+
+/* Mermaid fullscreen modal */
+#mermaid-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+
+  .mermaid-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+  }
+
+  .mermaid-modal-inner {
+    position: relative;
+    z-index: 1;
+    width: 96vw;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mermaid-modal-close {
+    position: absolute;
+    top: -2.2rem;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    &:hover { color: #aaa; }
+  }
+
+  .mermaid-modal-hint {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.72rem;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .mermaid-modal-svg {
+    flex: 1;
+    overflow: hidden;
+    cursor: grab;
+    background: #1e2736;
+    border-radius: 8px;
+
+    svg {
+      transform-origin: 0 0;
+      max-width: none !important;
+      display: block;
+    }
+  }
+}
+
+/* Rouge token colors */
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #6c7086; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #cba6f7; }
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 { color: #a6e3a1; }
+.highlight .nb, .highlight .bp { color: #89b4fa; }
+.highlight .nf, .highlight .nx { color: #89b4fa; }
+.highlight .nc, .highlight .nn { color: #f9e2af; }
+.highlight .no, .highlight .nv, .highlight .vi, .highlight .vc, .highlight .vg { color: #fab387; }
+.highlight .o, .highlight .ow { color: #89dceb; }
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo { color: #fab387; }
+.highlight .p { color: #cdd6f4; }
+.highlight .na { color: #89b4fa; }
+.highlight .nt { color: #cba6f7; }
+.highlight .err { color: #f38ba8; }

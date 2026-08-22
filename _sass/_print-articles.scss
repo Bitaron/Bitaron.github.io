@@ -1,0 +1,94 @@
+/* ============================================================
+   IMPRESSION — Articles (post pages)
+   ============================================================ */
+
+@media print {
+  /* Supprime le style card (ombre, arrondi, hover) */
+  .article-container {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Titre de l'article */
+  article h1.display-5 {
+    font-size: 20pt !important;
+    color: #111 !important;
+    margin-bottom: 4pt !important;
+  }
+
+  /* Ligne date / temps de lecture */
+  article header .text-muted {
+    font-size: 9pt !important;
+    color: #666 !important;
+    margin-bottom: 0.6cm !important;
+  }
+
+  /* Contenu : texte — Arial pour eviter le rendu fin de Poppins a l'impression */
+  article .content,
+  article .content * {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  article .content {
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+  article .content h2 {
+    font-size: 13pt !important;
+    color: #003b82 !important;
+    margin-top: 0.3cm !important;
+    margin-bottom: 0.1cm !important;
+    border-bottom: 1px solid #003b82;
+    padding-bottom: 2pt !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  article .content h3 {
+    font-size: 11pt !important;
+    color: #003b82 !important;
+    margin-top: 0.2cm !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Evite les lignes orphelines/veuves dans les paragraphes */
+  article .content p,
+  article .content li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Garde le premier paragraphe apres un titre sur la meme page */
+  article .content h2 + p,
+  article .content h2 + ul,
+  article .content h2 + ol,
+  article .content h3 + p,
+  article .content h3 + ul,
+  article .content h3 + ol {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  /* Images dans le contenu */
+  article .content img {
+    max-width: 80% !important;
+    page-break-inside: avoid !important;
+    display: block !important;
+    margin: 0.4cm auto !important;
+  }
+
+  /* Blocs de code — conserver le style sombre, forcer l'impression des couleurs */
+  .highlighter-rouge,
+  .highlight,
+  .highlight pre,
+  pre.highlight {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    white-space: pre-wrap !important;
+    page-break-inside: avoid !important;
+    font-size: 8pt !important;
+    border-radius: 4pt !important;
+    box-shadow: none !important;
+  }
+}

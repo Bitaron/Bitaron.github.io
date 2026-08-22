@@ -1,0 +1,19 @@
+<div class="stacked-card">
+  <div class="poste-header">
+    <div>
+      <h3 class="poste-title">{{ include.exp.title }}</h3>
+      <p class="poste-title mb-0"><strong>{{ include.exp.company }}</strong> · {{ include.exp.location }}</p>
+      <p class="text-muted mb-0">{{ include.exp.duration }}</p>
+    </div>
+  </div>
+  <div class="mission-description">
+    <ul>
+      {% for bullet in include.exp.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+    {% if include.exp.technologies %}
+    <p><strong>Technologies:</strong> {{ include.exp.technologies | join: ', ' }}</p>
+    {% endif %}
+  </div>
+</div>

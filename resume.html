@@ -1,0 +1,80 @@
+---
+layout: default
+title: Résumé
+permalink: /resume/
+---
+
+<div class="print-header">
+  <h1 class="print-name">{{ site.data.author.name }}</h1>
+  <p class="print-subtitle">{{ site.data.author.role }}</p>
+  <p class="print-tagline">{{ site.data.author.tagline }}</p>
+</div>
+
+<section id="profile" class="container mt-5">
+  <div class="stacked-card stacked-card-body">
+    <p class="mb-2">{{ site.data.author.bio }}</p>
+    <p class="mb-0">
+      <a href="mailto:{{ site.data.author.email_user }}@{{ site.data.author.email_domain }}">Email</a>
+      · <a href="{{ site.data.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      · <a href="{{ site.data.author.github }}" target="_blank" rel="noopener">GitHub</a>
+      · <span>+8801791693643</span>
+    </p>
+  </div>
+</section>
+
+<section id="experience" class="container mt-5">
+  <h2 class="section-header hover-underline-animation">Experience</h2>
+  <div class="stacked-cards section-content collapse show">
+    {% for exp in site.data.experiences %}
+      {% include experience-card.html exp=exp %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="skills" class="container mt-5">
+  <h2 class="section-header hover-underline-animation">Skills</h2>
+  <div class="stacked-cards collapse show section-content">
+    <div class="stacked-card stacked-card-body">
+      <ul class="mb-0">
+        {% for skill in site.data.skills %}
+        <li><strong>{{ skill.name }}:</strong> {{ skill.level }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="container mt-5">
+  <h2 class="section-header hover-underline-animation">Selected Projects</h2>
+  <div class="stacked-cards section-content collapse show">
+    {% for project in site.data.resume.projects limit: 5 %}
+    <div class="stacked-card">
+      <div class="stacked-card-body">
+        <h3 class="poste-title">{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <ul>
+          {% for highlight in project.highlights %}<li>{{ highlight }}</li>{% endfor %}
+        </ul>
+        <p class="text-muted mb-0"><strong>Technologies:</strong> {{ project.technologies | join: ", " }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="formations" class="container mt-5 mb-5">
+  <h2 class="section-header hover-underline-animation">Education</h2>
+  <div class="stacked-cards section-content collapse show">
+    <div class="stacked-card">
+      <div class="stacked-card-body">
+        <ul>
+          {% for education in site.data.education %}<li><strong>{{ education.year }} :</strong> {{ education.name }}</li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="d-print-none container mt-4 text-center">
+  <button class="btn btn-primary print-btn" type="button" onclick="window.print();">Download PDF</button>
+</section>

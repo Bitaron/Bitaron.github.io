@@ -1,0 +1,25 @@
+<!-- Back to top button -->
+<button id="back-to-top" type="button" aria-label="{{ site.data.ui.a11y_back_to_top }}"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var backToTopButton = document.getElementById('back-to-top');
+
+        // Debounce: wait for scroll to finish before reacting
+        var scrollTimeout;
+        window.addEventListener('scroll', function () {
+            if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+            scrollTimeout = requestAnimationFrame(function () {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+        }, { passive: true });
+
+        backToTopButton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    });
+</script>

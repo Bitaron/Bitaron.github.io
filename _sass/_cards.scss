@@ -1,0 +1,105 @@
+/* Card styles */
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card-icon img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Certification link */
+.cert-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.cert-link:hover {
+  color: var(--color-secondary);
+}
+
+/* Stacked cards for experiences */
+.stacked-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  box-shadow: var(--box-shadow-light);
+  border: 1px solid var(--color-border);
+  margin-bottom: 10px;
+  contain: content;
+}
+
+.stacked-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+}
+
+.stacked-card-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  align-self: start;
+}
+
+.stacked-card-body {
+  padding: 10px;
+}
+
+/* Card images — reserve space to avoid CLS before the image loads */
+.card-img-top {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card titles and text */
+.card-title {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.card-title a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.card-text {
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .stacked-card { width: 100%; margin-bottom: 20px; }
+  .stacked-card-img { width: 60px; height: 60px; }
+}

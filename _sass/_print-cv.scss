@@ -1,0 +1,175 @@
+/* ============================================================
+   IMPRESSION — Sections CV (about page)
+   ============================================================ */
+
+@media print {
+  /* === EN-TETES DE SECTION === */
+  .section-header {
+    display: block !important;
+    border-bottom: 2px solid #003b82 !important;
+    margin-bottom: 0.4em !important;
+    padding-bottom: 0.1em !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .section-header h2 {
+    color: #003b82 !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    margin: 0 !important;
+  }
+  .hover-underline-animation::after { display: none !important; }
+
+  /* === SECTION CONTENT (toujours deploye) === */
+  .section-content,
+  .section-content.collapse:not(.show) {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* === CERTIFICATIONS : grille -> liste propre === */
+  .certifications-grid {
+    display: block !important;
+  }
+  .certifications-grid .card {
+    display: flex !important;
+    flex-direction: row !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 3pt 4pt !important;
+    text-align: left !important;
+  }
+  .certifications-grid .card:nth-child(odd) {
+    background-color: #f0f4f8 !important;
+  }
+  .certifications-grid .card .card-body {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .certifications-grid .card .card-body h3 {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+    margin: 0 !important;
+  }
+  .certifications-grid .card .card-body .cert-date {
+    font-size: 10pt !important;
+    font-weight: 400 !important;
+    color: #555 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* === TABLEAU COMPETENCES === */
+  .table {
+    width: 100% !important;
+    font-size: 10pt !important;
+    border-collapse: collapse !important;
+  }
+  .table thead { display: none !important; }
+  .table td {
+    padding: 3pt 4pt !important;
+    border: none !important;
+  }
+  .table tbody tr:nth-child(odd) td { background-color: #f0f4f8 !important; }
+  .table td:last-child {
+    font-weight: 700 !important;
+    color: #003b82 !important;
+    text-align: right !important;
+  }
+
+  /* === EXPERIENCES : stacked cards -> entrees propres === */
+  .stacked-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #ddd !important;
+    padding: 8pt 0 !important;
+    margin-bottom: 0 !important;
+    page-break-inside: avoid !important;
+  }
+  .stacked-card:last-child { border-bottom: none !important; }
+  .stacked-card-body { padding: 0 !important; }
+
+  .poste-header {
+    display: block !important;
+  }
+  .poste-title {
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+    margin-bottom: 2pt !important;
+  }
+  .poste-title strong,
+  .mission-title strong { color: #003b82 !important; }
+
+  .poste-description {
+    font-style: italic !important;
+    color: #555 !important;
+    font-size: 9.5pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  .missions-title {
+    font-size: 10pt !important;
+    color: #003b82 !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    margin: 6pt 0 3pt !important;
+  }
+  .mission-header { margin-top: 5pt !important; }
+  .mission-title {
+    font-size: 10pt !important;
+    font-weight: 600 !important;
+  }
+  .mission-description { font-size: 9.5pt !important; }
+  .section-separator { border-top: 1px solid #ddd !important; }
+
+  /* === FORMATIONS : liste -> tableau visuel === */
+  #formations .stacked-card-body ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #formations .stacked-card-body ul li {
+    display: flex !important;
+    padding: 3pt 4pt !important;
+    font-size: 10pt !important;
+  }
+  #formations .stacked-card-body ul li:nth-child(odd) {
+    background-color: #f0f4f8 !important;
+  }
+  #formations .stacked-card-body ul li strong {
+    color: #003b82 !important;
+    min-width: 70pt !important;
+    margin-right: 8pt !important;
+    flex-shrink: 0 !important;
+  }
+  #formations a { display: none !important; }
+
+  /* === LANGUES === */
+  #langues .stacked-card-body img { display: none !important; }
+  #langues .stacked-card-body strong {
+    color: #003b82 !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    min-width: 80pt !important;
+  }
+
+  /* === CENTRES D'INTERET === */
+  .interest {
+    color: #222 !important;
+    font-weight: normal !important;
+    cursor: default !important;
+  }
+}

@@ -1,0 +1,212 @@
+/* Tag cloud */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-card-bg);
+  color: var(--color-secondary);
+  border: 1.5px solid rgba(0, 59, 130, 0.2);
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tag-cloud-item:hover {
+  background: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.tag-cloud-item .tag-count {
+  background: rgba(0, 59, 130, 0.12);
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 0 0.4em;
+  transition: background 0.2s ease;
+}
+
+.tag-cloud-item:hover .tag-count {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Tailles proportionnelles au nombre d'articles */
+.tag-cloud-item.tag-sm { font-size: 0.82rem; padding: 0.25rem 0.7rem; }
+.tag-cloud-item.tag-md { font-size: 0.95rem; padding: 0.3rem 0.85rem; }
+.tag-cloud-item.tag-lg { font-size: 1.1rem;  padding: 0.35rem 1rem; }
+.tag-cloud-item.tag-xl { font-size: 1.25rem; padding: 0.4rem 1.15rem; }
+
+/* Placeholder badge */
+.alert-placeholder {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  color: #856404;
+  font-size: 0.9rem;
+}
+
+/* Share buttons at end of article */
+.post-share {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 59, 130, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.post-share-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-right: 0.4rem;
+}
+.post-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2em;
+  background: var(--color-card-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  font-family: var(--font-main);
+}
+.post-share-btn:hover,
+.post-share-btn:focus-visible {
+  background: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
+  outline: none;
+  text-decoration: none;
+}
+.post-share-btn.copied {
+  background: rgba(40, 167, 69, 0.12);
+  color: #1a7a37;
+  border-color: rgba(40, 167, 69, 0.4);
+}
+@media (max-width: 575px) {
+  .post-share-label { flex-basis: 100%; margin-bottom: 0.3rem; }
+}
+
+/* Tags */
+.post-tags {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 59, 130, 0.2);
+}
+
+.tag-badge {
+  @include badge-style;
+  margin: 0.25rem;
+}
+
+.tags-page-section {
+  margin-bottom: 2rem;
+  scroll-margin-top: 80px;
+}
+
+.tags-page-section h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-secondary);
+  display: inline-block;
+}
+
+.tags-page-section .list-group-item a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tags-page-section .list-group-item a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ARTICLES PAGE — toggle vue */
+.articles-view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle-btn {
+  background: none;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.view-toggle-btn.active,
+.view-toggle-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.articles-chrono-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem !important;
+  border-radius: 6px !important;
+}
+
+.articles-chrono-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  a { font-weight: 600; }
+  .difficulty-badge { margin-bottom: 0; }
+}
+
+.articles-chrono-meta {
+  font-size: 0.85rem;
+}
+
+.articles-chrono-excerpt {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.articles-chrono-tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.tag-badge-sm {
+  font-size: 0.7rem !important;
+  padding: 0.15rem 0.5rem !important;
+}

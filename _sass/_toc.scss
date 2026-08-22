@@ -1,0 +1,232 @@
+/* Table of contents — inline banner */
+.toc-container {
+  background: rgba(8, 26, 52, 0.04);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.toc-container summary {
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.toc-container summary::-webkit-details-marker { display: none; }
+
+.toc-container summary::before {
+  content: '\f0ca';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+
+.toc-container[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 0.25rem 0;
+}
+
+.toc-list li::before {
+  content: '\00B7';
+  color: var(--color-secondary);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.toc-list li a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.toc-list li a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.toc-list .toc-h3 {
+  padding-left: 1.5rem;
+}
+
+.toc-list .toc-h3::before {
+  content: '\2013';
+  color: #aaa;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Floating TOC pill (appears after scrolling past the inline TOC)
+   ───────────────────────────────────────────────────────────── */
+.toc-pill {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 2em;
+  padding: 0.55rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  max-width: min(calc(100vw - 40px), 400px);
+}
+.toc-pill.visible {
+  display: inline-flex;
+}
+.toc-pill:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+.toc-pill-count {
+  background: rgba(0, 59, 130, 0.12);
+  color: var(--color-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 1em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.toc-pill-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 575px) {
+  .toc-pill { bottom: 10px; left: 10px; padding: 0.45rem 0.8rem; }
+  .toc-pill-title { max-width: 10rem; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   TOC drawer (pops out from the pill in bottom-left corner)
+   ───────────────────────────────────────────────────────────── */
+.toc-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+.toc-drawer[hidden] { display: none; }
+
+.toc-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  animation: toc-fade 0.2s ease;
+}
+
+.toc-drawer-panel {
+  position: absolute;
+  bottom: 75px;
+  left: 20px;
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  width: min(calc(100vw - 40px), 420px);
+  max-height: min(70vh, 560px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transform-origin: bottom left;
+  animation: toc-pop 0.22s ease;
+}
+
+.toc-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+#toc-drawer-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.toc-drawer-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+.toc-drawer-close:hover { color: var(--color-primary); background: rgba(0, 59, 130, 0.08); }
+.toc-drawer-close:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.toc-drawer-list {
+  list-style: none;
+  padding: 0.75rem 1.25rem 1.25rem;
+  margin: 0;
+  overflow-y: auto;
+}
+.toc-drawer-list li {
+  margin: 0.4rem 0;
+}
+.toc-drawer-list li::before {
+  content: '\00B7';
+  color: var(--color-secondary);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.toc-drawer-list li a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.toc-drawer-list li a:hover,
+.toc-drawer-list li a:focus-visible {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  outline: none;
+}
+.toc-drawer-list .toc-h3 { padding-left: 1.5rem; }
+.toc-drawer-list .toc-h3::before { content: '\2013'; color: #aaa; }
+
+@media (max-width: 575px) {
+  .toc-drawer-panel { bottom: 60px; left: 10px; max-height: 65vh; }
+}
+
+@keyframes toc-fade {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes toc-pop {
+  from { opacity: 0; transform: scale(0.9) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc-drawer-backdrop, .toc-drawer-panel { animation: none; }
+  .toc-pill { transition: none; }
+}

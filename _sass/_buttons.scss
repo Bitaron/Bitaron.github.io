@@ -1,0 +1,27 @@
+/* PDF button — consistent style with .tag-badge */
+.print-btn {
+  @include badge-style(
+    $bg-color: var(--color-primary),
+    $border-color: transparent,
+    $text-color: #fff,
+    $padding: 0.2rem 0.7rem,
+    $font-size: 0.82rem,
+    $display: inline-flex,
+    $border-width: 0
+  );
+  align-items: center;
+  gap: 0.35rem;
+  vertical-align: middle;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}

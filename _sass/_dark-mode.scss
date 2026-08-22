@@ -1,0 +1,252 @@
+/* ============================================================
+   DARK MODE
+   Auto (OS) + manual toggle via [data-theme] attribute
+   ============================================================ */
+
+/* Single mixin: all dark-mode declarations in one place — no duplication */
+@mixin dark-mode-styles {
+  /* --- CSS custom properties --- */
+  --color-primary: #a8c4e8;
+  --color-secondary: #4a9eff;
+  --color-navbar-bg: rgba(10, 20, 40, 0.98);
+  --color-background: #0f1923;
+  --color-card-bg: #1a2636;
+  --color-text: #d4d8dd;
+  --color-text-muted: #8a929b;
+  --color-border: #2a3544;
+  --box-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.18), 0 6px 16px rgba(0, 0, 0, 0.22);
+  --box-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.22), 0 12px 32px rgba(0, 0, 0, 0.32);
+
+  /* --- Bootstrap class overrides --- */
+  .text-muted { color: var(--color-text-muted) !important; }
+
+  .list-group-item {
+    background-color: var(--color-card-bg);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .table {
+    color: var(--color-text);
+    --bs-table-color: var(--color-text);
+    --bs-table-bg: var(--color-card-bg);
+    --bs-table-border-color: var(--color-border);
+    background-color: var(--color-card-bg);
+  }
+
+  .table > :not(caption) > * > * {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+
+  .table > thead > tr > th {
+    background-color: var(--table-header-bg);
+  }
+
+  /* Badges & buttons — outline style for dark mode (better contrast ~5:1) */
+  .tag-badge,
+  .print-btn {
+    background-color: transparent;
+    border: 1.5px solid var(--color-secondary);
+    color: var(--color-secondary) !important;
+  }
+
+  .tag-badge:hover,
+  .print-btn:hover {
+    background-color: var(--color-secondary);
+    color: #fff !important;
+  }
+
+  /* Articles view toggle buttons */
+  .view-toggle-btn {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+
+  .view-toggle-btn.active,
+  .view-toggle-btn:hover {
+    background: var(--color-secondary);
+    color: #fff;
+  }
+
+  .form-control {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+
+  .form-control::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .btn-close { filter: invert(1); }
+
+  .img-thumbnail {
+    border-color: var(--color-border);
+    background-color: var(--color-card-bg);
+  }
+
+  /* Inline code in articles */
+  article .content code {
+    background: #1e2a3a;
+    color: #89b4fa;
+  }
+
+  /* Blockquotes */
+  .blockquote,
+  article .content blockquote {
+    background-color: rgba(168, 196, 232, 0.07);
+    border-left-color: var(--color-primary);
+  }
+
+  /* Alert placeholder (AI disclaimer) */
+  .alert-placeholder {
+    background-color: #3d2e00;
+    border-left-color: #ffc107;
+    color: #ffd75e;
+  }
+
+  /* TOC */
+  .toc-container {
+    background: rgba(168, 196, 232, 0.08);
+  }
+
+  /* Article banner */
+  .article-banner {
+    background-color: rgba(168, 196, 232, 0.08);
+  }
+
+  .toc-list .toc-h3::before {
+    color: #555;
+  }
+
+  /* Tag cloud */
+  .tag-cloud-item {
+    border-color: rgba(74, 158, 255, 0.25);
+  }
+
+  .tag-cloud-item .tag-count {
+    background: rgba(74, 158, 255, 0.15);
+  }
+
+  /* Modal */
+  .modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content .btn-close {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Navbar */
+  .navbar-brand:hover {
+    color: #cce5ff;
+  }
+
+  /* Pagination */
+  .page-link {
+    background-color: var(--color-card-bg);
+    border-color: var(--color-border);
+  }
+
+  .page-item.active .page-link {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+
+  /* Section separator */
+  .section-separator {
+    border-top-color: var(--color-border);
+  }
+
+  /* Post tags border */
+  .post-tags {
+    border-top-color: var(--color-border);
+  }
+
+  /* Post share block */
+  .post-share {
+    border-top-color: var(--color-border);
+  }
+  .post-share-btn.copied {
+    background: rgba(138, 226, 147, 0.15);
+    color: #a6e3a1;
+    border-color: rgba(138, 226, 147, 0.35);
+  }
+
+  /* Series cards and page */
+  .series-card {
+    background: var(--color-card-bg);
+    border-color: var(--color-border);
+  }
+  .series-card-count,
+  .series-progress,
+  .toc-pill-count {
+    background: rgba(74, 158, 255, 0.15);
+    color: var(--color-secondary);
+  }
+  .series-page-item {
+    background: var(--color-card-bg);
+  }
+
+  /* Series block */
+  .series-block {
+    background: rgba(168, 196, 232, 0.07);
+  }
+
+  /* Difficulty badges — brighter text for dark backgrounds */
+  .difficulty-beginner     { background: rgba(255, 200, 50,  0.12); color: #f0c040; }
+  .difficulty-intermediate { background: rgba(100, 160, 220, 0.15); color: #7ab3f0; }
+  .difficulty-advanced     { background: rgba(80,  120, 200, 0.15); color: #6fa0e8; }
+  .difficulty-expert       { background: rgba(180,  80, 220, 0.15); color: #c070e8; }
+
+  /* Hover image border */
+  .hover-image {
+    border-color: var(--color-border);
+  }
+
+  /* Article container hover shadow */
+  .article-container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Footer — keep it dark in dark mode (don't follow --color-primary which
+     gets flipped to a light blue for heading contrast). Without this override,
+     the footer background and link color collide → invisible attribution. */
+  .cloud-footer {
+    background-color: #060e1a;
+    color: #d4d8dd;
+  }
+  .cloud-footer a {
+    color: #7ab3f0;
+  }
+  .cloud-footer a:hover {
+    color: #fff;
+  }
+
+  /* Stacked card hover shadow (about page) */
+  .stacked-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Company/mission logos: white pill to keep transparent logos readable */
+  .poste-logo,
+  .mission-logo {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2px;
+  }
+}
+
+/* Manual toggle: user clicked the button */
+[data-theme="dark"] {
+  @include dark-mode-styles;
+}
+
+/* Auto (OS preference): applies unless user explicitly chose light — excluded from print */
+@media (prefers-color-scheme: dark) and (not print) {
+  :root:not([data-theme="light"]) {
+    @include dark-mode-styles;
+  }
+}

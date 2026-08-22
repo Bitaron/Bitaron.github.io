@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Abstract platform architecture illustration">
+  <rect width="800" height="450" fill="#081a34"/>
+  <g fill="#003b82" opacity=".35">
+    <circle cx="160" cy="150" r="80"/>
+    <circle cx="400" cy="250" r="120"/>
+    <circle cx="650" cy="130" r="65"/>
+  </g>
+  <g stroke="#eef2f3" stroke-width="4" fill="none" opacity=".8">
+    <path d="M160 150c70 45 110 60 240 100"/>
+    <path d="M650 130c-85 55-145 90-250 120"/>
+    <circle cx="400" cy="250" r="18" fill="#eef2f3"/>
+  </g>
+</svg>

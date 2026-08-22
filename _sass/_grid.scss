@@ -1,0 +1,20 @@
+/* Grids */
+.certifications-grid,
+.applied-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .certifications-grid,
+  .applied-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-grid,
+  .applied-skills-grid { grid-template-columns: 1fr; gap: 10px; }
+}

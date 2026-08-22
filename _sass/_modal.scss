@@ -1,0 +1,106 @@
+/* Clouds */
+svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Style personnalise pour le modal Bootstrap */
+.modal-content {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  border: none;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: var(--spacing-base);
+  background-color: var(--color-card-bg);
+}
+
+.modal-header .modal-title {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.modal-header .btn-close {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  padding: var(--spacing-base);
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.modal-body img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Personnalisation de la superposition (backdrop) du modal */
+.modal-backdrop.show {
+  opacity: 0.8;
+  background-color: rgba(8, 26, 52, 0.5);
+}
+
+.modal-content .btn-close {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.modal-body {
+  position: relative;
+}
+
+/* Modal zoom image (articles + about interests) */
+.modal-zoom .modal-dialog {
+  max-width: 95vw;
+}
+
+.modal-zoom .modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.modal-zoom .modal-body {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-zoom-inner {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.modal-zoom-inner img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+}
+
+.modal-zoom-inner .btn-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  opacity: 1;
+  filter: invert(1) grayscale(1) brightness(2);
+}
