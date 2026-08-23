@@ -4,8 +4,8 @@ home_tagline: "Senior software engineer, technical leader, and writer."
 default_image: /assets/images/default-card.svg
 default_banner: ""
 description: >-
-  Portfolio, résumé, and articles by Kamruzzaman on backend architecture,
-  Kubernetes, and engineering leadership.
+  Portfolio, résumé, and articles by Kamruzzaman on resilient platforms,
+  clean architecture, and engineering leadership.
 url: "https://bitaron.github.io"
 baseurl: ""
 lang: en
