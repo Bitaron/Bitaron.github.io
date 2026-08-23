@@ -8,6 +8,66 @@
     linear-gradient(135deg, #050810 0%, #07111f 55%, #020609 100%);
 }
 
+.home-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-kicker {
+  margin-bottom: .8rem;
+  color: #00ffc5;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.home-intro h1 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.home-lede {
+  max-width: 730px;
+  margin: 0 auto;
+  color: rgba(232, 244, 242, .72);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  max-width: 760px;
+  margin: 2.2rem auto 0;
+}
+
+.home-stats div {
+  padding: 1rem;
+  border: 1px solid rgba(0, 255, 197, .18);
+  border-radius: 1rem;
+  background: rgba(4, 14, 20, .78);
+}
+
+.home-stats dt {
+  margin-bottom: .15rem;
+  color: rgba(217, 255, 246, .62);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.home-stats dd {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+  font-weight: 700;
+}
+
 .terminal-hero .console-window,
 .module-card,
 .live-feed {
@@ -243,6 +303,10 @@
 
 @media (max-width: 680px) {
   .console-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stats {
     grid-template-columns: 1fr;
   }
 

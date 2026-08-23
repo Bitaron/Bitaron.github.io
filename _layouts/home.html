@@ -6,18 +6,31 @@ layout: default
 
 <section class="home-terminal" aria-labelledby="terminal-heading">
   <div class="container">
+    <div class="home-intro">
+      <p class="home-kicker">SK. Kamruzzaman · Software Architect</p>
+      <h1>Engineering resilient platforms</h1>
+      <p class="home-lede">
+        I architect backend systems, Kubernetes infrastructure, and full-stack
+        products that stay dependable under real-world load.
+      </p>
+      <dl class="home-stats">
+        <div><dt>Experience</dt><dd>10+ years</dd></div>
+        <div><dt>Leadership</dt><dd>6+ engineers</dd></div>
+        <div><dt>Reliability</dt><dd>99.9%+ uptime</dd></div>
+      </dl>
+    </div>
+
     <header class="terminal-hero">
-      <pre class="console-window"><code><span class="prompt">kamruzzaman@platforms</span>:<span class="path">~</span>$ status --career
-role: senior software engineer
+      <pre class="console-window" aria-label="Career summary"><code><span class="prompt">kamruzzaman@platforms</span>:<span class="path">~</span>$ status --career
+role: software architect
 focus: backend architecture · high-availability systems · leadership
-experience: 9+ years shipping production platforms
-strength: architecture decisions and engineering clarity
-delivery: automated pipelines · observability · recovery paths
-impact: reliable services used by millions of people
+experience: 10+ years shipping production platforms
+strength: architecture decisions · Kubernetes · Spring Boot · React
+delivery: automated pipelines · clean boundaries · recovery paths
+impact: enterprise platforms used by millions of people
 principle: remove single points of failure
 availability: resilient by design
 <span class="prompt">kamruzzaman@platforms</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></code></pre>
-      <h1 id="terminal-heading" class="visually-hidden">{{ site.home_title }}</h1>
     </header>
 
     <section class="console-grid" aria-label="Latest articles">
@@ -97,11 +110,8 @@ availability: resilient by design
 </section>
 
 <!-- Section Articles -->
-<section id="articles" class="container mt-5">
-    <div class="section-header">
-        <h2 class="hover-underline-animation">{{ site.data.ui.home_recent }}</h2>
-    </div>
-    <div class="row">
+    <section id="article-index" aria-label="Article index" class="container mt-5">
+        <div class="row">
         {% assign posts_list = paginator.posts | default: site.posts %}
         {% for post in posts_list %}
         {% assign words = post.content | number_of_words %}
@@ -165,12 +175,6 @@ availability: resilient by design
     </nav>
     {% endif %}
 </section>
-
-{% if site.posts.size == 0 %}
-<section class="container mt-3 text-center">
-    <p class="text-muted">{{ site.data.ui.home_no_articles }}</p>
-</section>
-{% endif %}
 
 <!-- Rechercher & Decouvrir -->
 <aside class="container mt-5 mb-5">
