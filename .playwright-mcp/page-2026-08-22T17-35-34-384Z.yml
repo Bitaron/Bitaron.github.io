@@ -1,0 +1,31 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to main content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f1e3]:
+    - button "Toggle navigation" [ref=f1e4] [cursor=pointer]
+    - link "Kamruzzaman" [ref=f1e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f1e7]: 
+      - text: Kamruzzaman
+    - text:     
+  - main [ref=f1e8]:
+    - generic [ref=f1e9]:
+      - heading "Engineering resilient platforms" [level=1] [ref=f1e10]
+      - paragraph [ref=f1e11]: Senior software engineer, technical leader, and writer.
+    - heading "Recent Articles" [level=2] [ref=f1e14]
+    - paragraph [ref=f1e16]: No articles yet. Check back soon!
+    - complementary [ref=f1e17]:
+      - heading "Search articles" [level=3] [ref=f1e19]
+      - generic [ref=f1e20]: Search articles
+      - textbox "Search articles" [ref=f1e21]:
+        - /placeholder: Type your search...
+  - contentinfo [ref=f1e22]:
+    - generic [ref=f1e24]:
+      - paragraph [ref=f1e25]: Sk. Kamruzzaman - 2026
+      - paragraph [ref=f1e26]:
+        - text: Based on
+        - link "Cirrus for Jekyll" [ref=f1e27] [cursor=pointer]:
+          - /url: https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll
+        - text: by
+        - link "Arnaud FERRIERE" [ref=f1e28] [cursor=pointer]:
+          - /url: https://surlesnuages.fr

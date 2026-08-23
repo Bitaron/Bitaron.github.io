@@ -1,4 +1,6 @@
-author_name: "Kamruzzaman"
+author_name: "Sk. Kamruzzaman"
+headline: "Software Architect | 10+ Experience | Full stack | Backend specialization"
+
 contact:
   email: "bitaron90@gmail.com"
   phone: "+8801791693643"
@@ -7,36 +9,29 @@ contact:
   medium: "https://medium.com/@bitaron"
 
 education:
-  - degree: "B.Sc. Computer Science & Engineering"
-    institution: "BUET, Dhaka"
-    year: "2015"
+  - degree: "B.Sc. in Computer Science & Engineering"
+    institution: "Bangladesh University of Engineering and Technology (BUET), Dhaka"
+    year: "Aug 2015"
 
 skills:
   languages:
     - "Java"
     - "JavaScript"
-    - "TypeScript"
     - "C"
-    - "Bash"
     - "SQL"
   frameworks:
     - "Spring Boot"
+    - "Spring Framework"
     - "React"
   infrastructure:
-    - "Docker"
     - "Kubernetes"
-    - "Helm"
+    - "Docker"
     - "PostgreSQL"
     - "Redis"
   architecture:
     - "Microservices"
     - "Clean Architecture"
-    - "Event-Driven Systems"
     - "HA Design"
-  leadership:
-    - "Technical Leadership"
-    - "Mentorship (80% Test Coverage Culture)"
-    - "Revenue Generation (60M+ BDT)"
 
 experience:
   - title: "Senior Software Engineer"
@@ -44,112 +39,131 @@ experience:
     location: "Dhaka, BD"
     duration: "Aug 2021 – Present"
     bullets:
-      - "Architected Kubernetes infrastructure for customer/merchant/agent onboarding"
-      - "Designed high-concurrency, resilient systems with HA topologies"
-      - "Optimized deployment pipelines using ArgoCD and Helm"
-      - "Led design/architecture decisions for 6+ engineers on enterprise platforms"
-      - "Achieved 99.9%+ uptime for mobile financial services handling millions of users"
+      - "Architected production Kubernetes infrastructure for customer, merchant, and agent onboarding."
+      - "Designed highly available network topologies and orchestration layers that eliminated single points of failure."
+      - "Automated deployment pipelines and managed provisioning, upgrades, and monitoring across cluster lifecycles."
+      - "Delivered multi-tenant university-admission, education-management, IP-telephony, and NID-verification systems."
+      - "Led full-stack delivery across Spring Boot backends and React clients."
   - title: "Engineer Level-2, R&D"
     company: "Kona Software Lab Ltd."
     location: "Dhaka, BD"
     duration: "Feb 2020 – Jun 2021"
     bullets:
-      - "Worked on 10+ microservices in Spring Boot with regular bug fixes and new feature development"
-      - "Maintained clear communication with South Korean counterparts; linked git issues with Microsoft Teams"
-      - "Organized Kona Money project resources; created automated GitLab Wiki documentation"
-      - "Wrote technical notes and blogs on complex business logic"
-      - "Maintained deployment pipeline and automated deployment procedures"
+      - "Worked on ten payment-platform microservices in Spring Boot with bug fixes and new feature development."
+      - "Maintained communication with South Korean counterparts and attached communication history to Git issues using Microsoft Teams."
+      - "Organized Kona Money resources and created automated documentation in GitLab Wiki."
+      - "Wrote notes and blogs explaining complex topics and business logic."
+      - "Maintained deployment pipelines and automated deployment procedures; created deployment guidelines."
   - title: "Member R&D"
     company: "CommLink Info Tech Ltd."
     location: "Dhaka, BD"
     duration: "Sep 2017 – Jan 2020"
     bullets:
-      - "Developed network map (Google Maps) using Flux architecture"
-      - "Implemented TMF814V3.2 using CORBA for vendor integration"
-      - "Created project management structure for developers and management"
-      - "Enabled team build/test/deploy using Rake and Android applications"
-      - "Added test structure for embedded systems using Unity"
-      - "Booted SoC using U-Boot and Linux; debugged hardware schematics"
-      - "Initiated documentation culture across the team"
+      - "Developed network mapping with Google Maps and Flux architecture."
+      - "Implemented TMF814V3.2 using CORBA for vendor integration."
+      - "Created Java modules for maps, caching, and graphs."
+      - "Established project-management structure and build-test-deploy workflows using Rake and Android applications."
+      - "Added embedded-system test structure with Unity, debugged a large C project, booted SoC with U-Boot and Linux, and reviewed SoC hardware schematics."
+      - "Initiated a process-documentation culture."
   - title: "Software Engineer"
     company: "mPower Social Enterprises Ltd."
     location: "Dhaka, BD"
     duration: "Feb 2017 – Sep 2017"
     bullets:
-      - "Collaborated globally to develop openSRP in Spring Boot"
-      - "Contributed to mCare (maternal care app) used by millions"
-      - "Designed unit testing methodology for openSRP; achieved 80% test coverage compliance with UNICEF"
+      - "Collaborated globally on OpenSRP development using Spring Boot."
+      - "Contributed to mCare, a maternal-care application used by millions."
+      - "Designed unit-testing methodology and achieved UNICEF’s 80% coverage compliance."
   - title: "Software Engineer"
     company: "Questtag (Shipday)"
     location: "Remote"
     duration: "Jan 2013 – Oct 2016"
     bullets:
-      - "Developed REST API using Java and Play Framework"
-      - "Implemented front-end client in jQuery"
-      - "Conducted end-to-end testing and quality assurance"
-      - "Created documentation for public and internal use"
+      - "Developed REST APIs using Java and Play Framework."
+      - "Implemented the front-end client in jQuery."
+      - "Conducted end-to-end testing and quality assurance."
+      - "Created documentation for public and internal use."
 
 projects:
-  - title: "Banglalink MFS Onboarding System"
-    description: "High-concurrency mobile financial services platform with Kubernetes-based microservices architecture"
-    technologies: ["Spring Boot", "Kubernetes", "Docker", "ArgoCD", "Helm", "PostgreSQL"]
+  - title: "University Admission System SaaS"
+    description: "Multi-tenant platform supporting university admission operations"
+    technologies: ["Spring Boot", "Micro-kernel Architecture", "Modular Monolith", "React"]
     highlights:
-      - "Customer, merchant, and agent onboarding flows"
-      - "HA topology design eliminating single points of failure"
-      - "Automated GitOps deployment pipelines"
-    type: "Professional"
-  - title: "University Admission SaaS (NDUB, MIST)"
-    description: "Multi-tenant admission platform with plug-and-play feature management using modular monolith architecture"
-    technologies: ["Spring Boot", "React", "Clean Architecture", "Modular Monolith"]
+      - "Plug-and-play feature management"
+      - "Reduced coupling while maintaining deployment simplicity"
+      - "Notre Dame University Bangladesh admissions and MIST applicant portal"
+  - title: "Education Management System"
+    description: "Exam and academic operations platform with time-sensitive workflows"
+    technologies: ["Spring Boot", "WebSocket", "Legacy Data Migration"]
     highlights:
-      - "Notre Dame University Bangladesh admission system"
-      - "MIST applicant portal"
-      - "Layered micro-kernel architecture"
-    type: "Professional"
-  - title: "IP Telephony Business Platform"
-    description: "Low-code platform with plug-and-play architecture for telephony services"
+      - "Exam and result management"
+      - "Seat-planning and tabulation-generation algorithms"
+      - "Reusable WebSocket notification module"
+      - "On-demand and on-site support with legacy-data integrity"
+  - title: "IP Telephony Business Service"
+    description: "Business telephony service designed for rapid market penetration"
     technologies: ["Spring Boot", "React", "Design by Contract"]
     highlights:
-      - "Stakeholder-driven requirement gathering"
-      - "Microservices backend with contract-first design"
-      - "Seamless React front-end experience"
-    type: "Professional"
+      - "Stakeholder-driven requirements and project milestones"
+      - "Plug-and-play architecture for maintenance and business capability"
+      - "Contract-focused backend services with a smooth React client"
+  - title: "Banglalink MFS Onboarding"
+    description: "High-concurrency mobile financial services onboarding infrastructure"
+    technologies: ["Kubernetes", "Spring Boot", "HA Design", "CI/CD"]
+    highlights:
+      - "Customer, merchant, and agent onboarding"
+      - "Production Kubernetes infrastructure and automated deployment pipelines"
+      - "Highly available topology without single points of failure"
+      - "Cluster provisioning, upgrades, and monitoring"
   - title: "Bangladesh NID Verification Module"
-    description: "Clean layered architecture for national ID database integration with high-throughput verification"
-    technologies: ["Spring Boot", "Clean Architecture", "External API Integration"]
+    description: "High-throughput verification integration with national identity databases"
+    technologies: ["Spring Boot", "Clean Layered Architecture", "External APIs"]
     highlights:
-      - "Strict decoupling of business logic from data access"
-      - "Rapid adaptation to policy changes"
-      - "Third-party provider integration capability"
-    type: "Professional"
-  - title: "Education Management System"
-    description: "Comprehensive exam/result management with complex algorithms for seat planning"
-    technologies: ["Spring Boot", "WebSocket", "Data Migration"]
+      - "Precision-focused core verification logic"
+      - "Strict separation of business logic, data access, and integrations"
+      - "Maintainable adaptation to policy changes and third-party providers"
+  - title: "Payment Platform"
+    description: "Ten Spring Boot microservices supporting payment operations"
+    technologies: ["Spring Boot", "GitLab Wiki", "Microsoft Teams"]
     highlights:
-      - "Exam and result management modules"
-      - "Legacy data import with integrity preservation"
-      - "Real-time WebSocket notification module"
-      - "On-site support for time-sensitive operations"
-    type: "Professional"
+      - "Regular defect resolution and new feature development"
+      - "Cross-regional communication tied to Git issues"
+      - "Organized project knowledge base and automated deployment guidelines"
   - title: "OpenSRP Contributions"
-    description: "Global collaboration on open-source SRP framework for maternal care"
-    technologies: ["Spring Boot", "Open Source"]
+    description: "Global open-source SRP framework for maternal care"
+    technologies: ["Spring Boot", "Unit Testing"]
     highlights:
-      - "mCare app used by millions"
-      - "UNICEF 80% test coverage compliance"
+      - "mCare maternal-care app used by millions"
+      - "UNICEF 80% test-coverage compliance"
     type: "Open Source"
     repo: "https://github.com/opensrp/opensrp-server"
-  - title: "Transport Management Platform"
-    description: "Network mapping and management using Flux architecture"
-    technologies: ["Java", "CORBA", "Android", "Google Maps"]
+  - title: "Network Management"
+    description: "Vendor network visualization and management system"
+    technologies: ["Java", "Flux", "CORBA", "Google Maps"]
     highlights:
+      - "Google Maps network view"
       - "TMF814V3.2 implementation"
       - "Map, cache, and graph modules"
-    type: "Professional"
-  - title: "Delivery Management Software (Shipday)"
-    description: "REST API and front-end for delivery management"
+  - title: "Software System on Chip"
+    description: "Embedded-system bring-up, testing, and debugging"
+    technologies: ["C", "Unity", "U-Boot", "Linux"]
+    highlights:
+      - "Project management structure for developers and management"
+      - "Rake and Android-assisted build, test, and deploy workflow"
+      - "Embedded tests, C debugging, SoC boot, and hardware-schematic debugging"
+  - title: "Delivery Management Software"
+    description: "Shipday delivery management API and web client"
     technologies: ["Java", "Play Framework", "jQuery"]
     highlights:
-      - "End-to-end testing and QA"
-      - "Public and internal documentation"
-    type: "Professional"
+      - "REST API implementation"
+      - "Front-end client development"
+      - "End-to-end QA and public/internal documentation"
+
+leadership:
+  - title: "Technical Leadership"
+    description: "Led design and architecture decisions for 6+ engineers on enterprise platforms"
+  - title: "Revenue Generation"
+    description: "Generated 60M+ BDT in revenue"
+  - title: "Technical Mentorship"
+    description: "Established coding standards, unit-testing practices with an 80% coverage requirement, and documentation culture"
+  - title: "Platform Reliability"
+    description: "Designed systems handling millions of concurrent users with 99.9%+ uptime"
