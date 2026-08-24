@@ -1,3 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-  <path d="M0,0 L0,55 C120,85 240,20 360,55 C480,90 600,20 720,55 C840,90 960,20 1080,55 C1200,90 1320,30 1440,55 L1440,0 Z"/>
+  <defs>
+    <linearGradient id="footer-wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#081A34"/>
+      <stop offset="1" stop-color="#003B82"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,0 L1440,0 L1440,52 C1260,84 1080,22 900,50 C720,78 540,20 360,48 C240,66 100,38 0,58 Z" fill="url(#footer-wave)"/>
 </svg>
