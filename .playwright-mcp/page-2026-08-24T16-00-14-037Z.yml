@@ -1,0 +1,65 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to main content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f1e3]:
+    - button "Toggle navigation" [ref=f1e4] [cursor=pointer]
+    - link "Kamruzzaman" [ref=f1e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f1e7]: 
+      - text: Kamruzzaman
+    - text:     
+  - main [ref=f1e8]:
+    - generic [ref=f1e11]:
+      - img "Portrait of Sk. Kamruzzaman seated at a table in front of a living plant wall" [ref=f1e13]
+      - generic [ref=f1e14]:
+        - paragraph [ref=f1e15]: Software Architect
+        - heading "Engineering software that stays soft" [level=1] [ref=f1e16]
+        - paragraph [ref=f1e17]: I am a software architect with full-stack delivery experience and a backend specialization. I design resilient microservices and highly available platforms, build production Kubernetes infrastructure, and help teams raise quality through clear architecture, automation, testing, and documentation.
+        - generic [ref=f1e18]:
+          - generic [ref=f1e19]:
+            - strong [ref=f1e20]: 10+
+            - generic [ref=f1e21]: Years experience
+          - generic [ref=f1e22]:
+            - strong [ref=f1e23]: 6+
+            - generic [ref=f1e24]: Engineers led
+          - generic [ref=f1e25]:
+            - strong [ref=f1e26]: 99.9%+
+            - generic [ref=f1e27]: Platform uptime
+        - generic [ref=f1e28]:
+          - link "View résumé" [ref=f1e29] [cursor=pointer]:
+            - /url: /resume/
+          - link "Read articles" [ref=f1e30] [cursor=pointer]:
+            - /url: /articles/
+    - generic [ref=f1e31]:
+      - heading "Focus" [level=2] [ref=f1e33]
+      - generic [ref=f1e34]:
+        - article [ref=f1e35]:
+          - heading "Architecture" [level=3] [ref=f1e36]:
+            - generic [ref=f1e37]: 
+            - text: Architecture
+          - paragraph [ref=f1e38]: Design resilient, event-driven systems and clean service boundaries for high-concurrency platforms.
+        - article [ref=f1e39]:
+          - heading "Backend Platforms" [level=3] [ref=f1e40]:
+            - generic [ref=f1e41]: 
+            - text: Backend Platforms
+          - paragraph [ref=f1e42]: Build Spring Boot services with modular boundaries, reliable persistence, and maintainable integrations.
+        - article [ref=f1e43]:
+          - heading "Kubernetes" [level=3] [ref=f1e44]:
+            - generic [ref=f1e45]: 
+            - text: Kubernetes
+          - paragraph [ref=f1e46]: Deliver highly available clusters, GitOps pipelines, and safe lifecycle automation from provisioning to upgrades.
+        - article [ref=f1e47]:
+          - heading "Engineering Leadership" [level=3] [ref=f1e48]:
+            - generic [ref=f1e49]: 
+            - text: Engineering Leadership
+          - paragraph [ref=f1e50]: Establish coding standards, testing discipline, documentation culture, and clear technical direction.
+  - contentinfo [ref=f1e51]:
+    - generic [ref=f1e53]:
+      - paragraph [ref=f1e54]: Sk. Kamruzzaman - 2026
+      - paragraph [ref=f1e55]:
+        - text: Based on
+        - link "Cirrus for Jekyll" [ref=f1e56] [cursor=pointer]:
+          - /url: https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll
+        - text: by
+        - link "Arnaud FERRIERE" [ref=f1e57] [cursor=pointer]:
+          - /url: https://surlesnuages.fr

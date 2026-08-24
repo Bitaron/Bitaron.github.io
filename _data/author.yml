@@ -5,8 +5,8 @@ tagline: "10+ years experience · Full stack · Backend specialization"
 # Profile picture — replace with your own (recommended: square ~300x300).
 # Out of the box: a self-hosted DiceBear avatar (lorelei style, ~5KB SVG).
 # Convention: drop personal images in assets/about/ to keep the asset tree tidy.
-photo: assets/about/photo.svg
-photo_alt: "Profile picture of Sk. Kamruzzaman"
+photo: assets/about/profile.jpg
+photo_alt: "Portrait of Sk. Kamruzzaman seated at a table in front of a living plant wall"
 linkedin: https://linkedin.com/in/bitaron
 github: https://github.com/Bitaron
 email_user: bitaron90

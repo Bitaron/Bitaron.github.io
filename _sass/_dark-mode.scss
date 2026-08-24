@@ -230,6 +230,16 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
+  .about-focus-card {
+    border-color: rgba(255, 255, 255, .1);
+    background-color: #0f1923;
+  }
+
+  .about-focus-card h3,
+  .about-focus-card p {
+    color: #d4d8dd;
+  }
+
   /* Company/mission logos: white pill to keep transparent logos readable */
   .poste-logo,
   .mission-logo {

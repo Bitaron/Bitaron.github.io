@@ -8,6 +8,10 @@
     linear-gradient(135deg, #050810 0%, #07111f 55%, #020609 100%);
 }
 
+.home-terminal .container {
+  margin-bottom: 0;
+}
+
 .home-intro {
   max-width: 900px;
   margin: 0 auto;
@@ -109,7 +113,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem 1rem;
-  margin-top: 3rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 
 .section-heading {
@@ -142,7 +146,15 @@
   min-height: 250px;
   padding: 1.3rem;
   border-radius: 1rem;
+  overflow: hidden;
   transition: border-color .2s ease, transform .2s ease;
+}
+
+.module-card .card-img-top {
+  margin: -1.3rem -1.3rem 1rem;
+  width: calc(100% + 2.6rem);
+  max-width: none;
+  border-radius: 0;
 }
 
 .module-card:hover {
@@ -214,7 +226,7 @@
 
 .live-feed {
   overflow: hidden;
-  margin-top: 3rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
   border-radius: 1rem;
 }
 
@@ -242,13 +254,22 @@
   display: flex;
   justify-content: center;
   gap: .8rem;
-  margin-top: 2.5rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
 }
 
 .contact-panel {
-  padding: 4rem 0;
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
   color: #fff;
   background: #04101a;
+}
+
+.contact-panel .container {
+  margin-bottom: 0;
+}
+
+.article-index {
+  margin-top: clamp(3rem, 8vw, 5rem) !important;
+  margin-bottom: clamp(2rem, 6vw, 3rem) !important;
 }
 
 .contact-inner {

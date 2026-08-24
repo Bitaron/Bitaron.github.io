@@ -110,7 +110,7 @@ availability: resilient by design
 </section>
 
 <!-- Section Articles -->
-    <section id="article-index" aria-label="Article index" class="container mt-5">
+    <section id="article-index" aria-label="Article index" class="container article-index">
         <div class="row">
         {% assign posts_list = paginator.posts | default: site.posts %}
         {% for post in posts_list %}
@@ -118,9 +118,9 @@ availability: resilient by design
         {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
         <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card h-100" style="cursor:pointer;">
-                {% assign card_image = post.image | default: site.default_image %}
+            {% assign card_image = post.image | default: site.default_image %}
                 {% if card_image and card_image != "" %}
-                <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ post.title }}"{% if forloop.first %} fetchpriority="high" decoding="async"{% else %} loading="lazy"{% endif %}>
+                <img src="{{ card_image | relative_url }}?v={{ site.time | date: '%s' }}" class="card-img-top" alt="{{ post.title }}"{% if forloop.first %} fetchpriority="high" decoding="async"{% else %} loading="lazy"{% endif %}>
                 {% endif %}
                 <div class="card-body">
                     <h3 class="card-title">

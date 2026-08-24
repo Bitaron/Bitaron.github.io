@@ -4,26 +4,36 @@ title: About
 permalink: /about/
 ---
 
-<section class="container mt-5">
-  <div class="row align-items-start">
-    <div class="col-md-3">
-      <img src="{{ site.data.author.photo | relative_url }}" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high" alt="{{ site.data.author.photo_alt }}">
-    </div>
-    <div class="col-md-9">
-      <h1 class="hover-underline-animation">About</h1>
-      <p class="lead">{{ site.data.author.bio }}</p>
-      <div class="d-flex flex-wrap gap-2 mt-4">
-        <a class="btn btn-primary" href="{{ '/resume/' | relative_url }}">View résumé</a>
-        <a class="btn btn-outline-secondary" href="{{ '/articles/' | relative_url }}">Read articles</a>
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div class="about-photo-frame">
+        <img src="{{ site.data.author.photo | relative_url }}?v={{ site.time | date: '%s' }}" class="about-photo" width="600" height="600" fetchpriority="high" decoding="async" alt="{{ site.data.author.photo_alt }}">
+      </div>
+      <div class="about-intro">
+        <p class="about-kicker">Software Architect</p>
+        <h1>Engineering software that stays soft</h1>
+        <p class="about-lede">{{ site.data.author.bio }}</p>
+        <div class="about-stats">
+          <div><strong>10+</strong><span>Years experience</span></div>
+          <div><strong>6+</strong><span>Engineers led</span></div>
+          <div><strong>99.9%+</strong><span>Platform uptime</span></div>
+        </div>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-primary" href="{{ '/resume/' | relative_url }}">View résumé</a>
+          <a class="btn btn-outline-secondary" href="{{ '/articles/' | relative_url }}">Read articles</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="container mt-5 mb-5">
+<section class="container about-section">
   <div class="section-header"><h2 class="hover-underline-animation">Focus</h2></div>
-  <div class="row g-4">
-    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h3>Architecture</h3><p>Design resilient, event-driven systems and clean service boundaries for high-concurrency platforms.</p></div></div></div>
-    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h3>Delivery</h3><p>Lead engineering teams with GitOps, automated pipelines, and a strong testing culture.</p></div></div></div>
+  <div class="about-focus-grid">
+    <article class="about-focus-card"><h3><i class="fas fa-cubes" aria-hidden="true"></i> Architecture</h3><p>Design resilient, event-driven systems and clean service boundaries for high-concurrency platforms.</p></article>
+    <article class="about-focus-card"><h3><i class="fas fa-diagram-project" aria-hidden="true"></i> Backend Platforms</h3><p>Build Spring Boot services with modular boundaries, reliable persistence, and maintainable integrations.</p></article>
+    <article class="about-focus-card"><h3><i class="fas fa-dharmachakra" aria-hidden="true"></i> Kubernetes</h3><p>Deliver highly available clusters, GitOps pipelines, and safe lifecycle automation from provisioning to upgrades.</p></article>
+    <article class="about-focus-card"><h3><i class="fas fa-people-group" aria-hidden="true"></i> Engineering Leadership</h3><p>Establish coding standards, testing discipline, documentation culture, and clear technical direction.</p></article>
   </div>
 </section>

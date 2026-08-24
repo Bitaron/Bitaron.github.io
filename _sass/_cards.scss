@@ -74,8 +74,14 @@
 .card-img-top {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
+}
+
+.article-index .card-img-top {
+  aspect-ratio: 16 / 9;
+  height: auto;
 }
 
 /* Card titles and text */
