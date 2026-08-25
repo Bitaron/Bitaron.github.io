@@ -1,7 +1,7 @@
 /* Operator Console homepage */
 .home-terminal {
-  margin-top: -100px;
-  padding: calc(100px + 4rem) 0 6rem;
+  margin-top: -74px;
+  padding: calc(74px + 2.5rem) 0 4.5rem;
   color: #e8f4f2;
   background:
     radial-gradient(circle at 18% 10%, rgba(0, 255, 197, .08), transparent 28%),
@@ -312,8 +312,8 @@
 
 @media (max-width: 768px) {
   .home-terminal {
-    margin-top: -60px;
-    padding-top: calc(60px + 3rem);
+    margin-top: -58px;
+    padding-top: calc(58px + 2rem);
   }
 
   .contact-inner {

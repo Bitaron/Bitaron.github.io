@@ -1,8 +1,13 @@
 /* Navbar */
 .navbar {
   background-color: var(--color-navbar-bg);
-  padding: 1rem 2rem;
+  padding: .65rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand i {
+  margin-right: .5rem;
+  color: #00ffc5;
 }
 
 .navbar-toggler {
@@ -110,6 +115,6 @@
 }
 
 @media (max-width: 991px) {
-  .navbar { padding: 0.8rem 1.5rem; }
+  .navbar { padding: .55rem 1.5rem; }
   .navbar-toggler { padding: 0.6rem; font-size: 1.2rem; }
 }

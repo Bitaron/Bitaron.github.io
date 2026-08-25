@@ -1,0 +1,227 @@
+- generic [active] [ref=f9e1]:
+  - link "Skip to main content" [ref=f9e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f9e3]:
+    - link "Kamruzzaman" [ref=f9e4] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f9e5]: 
+      - text: Kamruzzaman
+    - generic [ref=f9e6]:
+      - list [ref=f9e7]:
+        - listitem [ref=f9e8]:
+          - link "Home" [ref=f9e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f9e10]:
+          - link "Résumé" [ref=f9e11] [cursor=pointer]:
+            - /url: /resume/
+        - listitem [ref=f9e12]:
+          - link "Articles" [ref=f9e13] [cursor=pointer]:
+            - /url: /articles/
+        - listitem [ref=f9e14]:
+          - link "About" [ref=f9e15] [cursor=pointer]:
+            - /url: /about/
+      - list [ref=f9e16]:
+        - listitem [ref=f9e17]:
+          - link "Open my LinkedIn profile" [ref=f9e18] [cursor=pointer]:
+            - /url: https://linkedin.com/in/bitaron
+            - generic [ref=f9e19]: 
+            - text: LinkedIn
+        - listitem [ref=f9e20]:
+          - link "Open my GitHub profile" [ref=f9e21] [cursor=pointer]:
+            - /url: https://github.com/Bitaron
+            - generic [ref=f9e22]: 
+            - text: GitHub
+        - listitem [ref=f9e23]:
+          - link "Send me an email" [ref=f9e24] [cursor=pointer]:
+            - /url: mailto:bitaron90@gmail.com
+            - generic [ref=f9e25]: 
+            - text: Contact
+        - listitem [ref=f9e26]:
+          - link "RSS feed" [ref=f9e27] [cursor=pointer]:
+            - /url: /feed.xml
+            - generic [ref=f9e28]: 
+            - text: RSS
+        - listitem [ref=f9e29]:
+          - button "Toggle dark mode" [ref=f9e30] [cursor=pointer]:
+            - generic [ref=f9e31]: 
+            - text: Theme
+  - main [ref=f9e32]:
+    - article [ref=f9e33]:
+      - generic [ref=f9e34]:
+        - generic [ref=f9e35]:
+          - 'heading "Software Design Principles: Rules that guide us" [level=1] [ref=f9e36]'
+          - paragraph [ref=f9e37]:
+            - text: "Published: 12/14/2023 ·"
+            - generic [ref=f9e38]: 
+            - text: 8 min read ·
+            - button "Save as PDF" [ref=f9e39] [cursor=pointer]:
+              - generic [ref=f9e40]: 
+              - text: PDF
+          - 'img "Software Design Principles: Rules that guide us" [ref=f9e41]'
+        - text: 
+        - generic [ref=f9e42]:
+          - blockquote [ref=f9e43]:
+            - paragraph [ref=f9e44]:
+              - text: Originally published on
+              - link "Medium (opens in a new window)" [ref=f9e45] [cursor=pointer]:
+                - /url: https://medium.com/@bitaron90/software-design-principles-rules-that-guide-us-270fb551e852
+                - text: Medium
+                - generic [ref=f9e46]: 
+                - generic [ref=f9e47]: (opens in a new window)
+              - text: .
+          - paragraph [ref=f9e48]:
+            - strong [ref=f9e49]: "Abraham Lincoln once said: If I had eight hours to chop down a tree, I would spend six sharpening my axe."
+            - text: This profound wisdom applies to all kinds of tasks. In software engineering, this is a fundamental rule. While developing software, we should spend a good portion of time on the design process. There are some numbers based on statistics in the book Code Complete. I highly recommend all to read this book.
+          - paragraph [ref=f9e50]: However, the design process is the most overlooked part of software development. In this article, I am documenting my thought process of designing. It is more of a historical record of my capabilities. And if it helps and creates awareness, then that is a plus. I have chosen a simple lock module as an example.
+          - paragraph [ref=f9e51]: "Suppose I am building exam management software with three modules:"
+          - list [ref=f9e52]:
+            - listitem [ref=f9e53]: Seat plan
+            - listitem [ref=f9e54]: Mark entry
+            - listitem [ref=f9e55]: Result calculation
+          - paragraph [ref=f9e56]: "And some use cases among many:"
+          - list [ref=f9e57]:
+            - listitem [ref=f9e58]: Users can generate seat plan
+            - listitem [ref=f9e59]: Users can lock/ unlock seat plan generation action
+            - listitem [ref=f9e60]: Users can input mark
+            - listitem [ref=f9e61]: Users can lock/ unlock mark entry
+            - listitem [ref=f9e62]: Users can calculate results
+            - listitem [ref=f9e63]: Users can lock/ unlock result calculation
+            - listitem [ref=f9e64]: Users can make request(for lock/unlock) and accept/reject for the above features
+          - paragraph [ref=f9e65]:
+            - text: I want to design the lock/unlock part of the system.
+            - strong [ref=f9e66]: I can think of three ways to do it. I will list them below from worst to best.
+          - list [ref=f9e67]:
+            - listitem [ref=f9e68]: I can create a lock class for each type of action. A class for locking seat plan generation. Another class for locking mark entry and so on. It violates most of the principles, especially the DRY(Do not repeat yourself) principle. Every change needs to be propagated to multiple places. Not maintainable, reusable, and scalable. In short, it is not an enterprise-level solution.
+            - listitem [ref=f9e69]: "We can create a single class with an identifier for each type of action and another for a specific action. E.g.: A lock for MARK_ENTYR type action with mark entry id of a specific subject. It is better. It doesn’t violate the DRY principle. But it is tightly coupled. It knows all the modules it works with. Changes in the client might force it to change. Those changes might break the OCP(Open-close principle). Separation of concerns is not maintained. The lock module might need to facilitate various clients’ requirements. It can also break the SRP(Single responsibility) principle. As it knows about the client, it might be tempted to do some work for the client. Also, there could be some scalability issues. With a strict development process, I can solve these issues. It might be possible for initial developers but not feasible for others to follow. So I would not recommend this as an enterprise-level solution."
+          - paragraph [ref=f9e70]:
+            - text: Before the third and my preferred design, I want to list some of the criteria to follow.
+            - strong [ref=f9e71]: "Design should be :"
+          - list [ref=f9e72]:
+            - listitem [ref=f9e73]: Loosely coupled
+            - listitem [ref=f9e74]: Does not violate DRY
+            - listitem [ref=f9e75]: Adhere to SRP
+            - listitem [ref=f9e76]: Has separation of concern
+            - listitem [ref=f9e77]: Maintain OCP
+            - listitem [ref=f9e78]: Properly encapsulated
+            - listitem [ref=f9e79]: Modular and portable
+          - paragraph [ref=f9e80]: Let us digress. We are building a house. There are three rooms. We need a way to secure them when we go out. So what do we do? Of course, we buy locks from the stores. There are different kinds of locks based on size, shape, mechanism, etc. Assume there is only one store and it sells only one type of lock. We go to the store, buy locks, and use them. As simple as that. We do not need to tell the store anything about our room(even in the real world we at most need to divulge to the store what kind of lock applies to the room but do not need to specify the room location, size, or anything that can identify the room).
+          - paragraph [ref=f9e81]:
+            - strong [ref=f9e82]: "If I take that analogy and apply it to this problem, what it would look like:"
+          - list [ref=f9e83]:
+            - listitem [ref=f9e84]: We will have a Lock store, in this case, a Lock class.
+            - listitem [ref=f9e85]: The client will create a lock object and use it as it wishes.
+            - listitem [ref=f9e86]: The lock class will not know anything about the client.
+          - paragraph [ref=f9e87]: "Looks simple. It makes me wonder if this can fulfill all the requirements that might arise in the future. So I will list some requirements:"
+          - list [ref=f9e88]:
+            - listitem [ref=f9e89]: Can lock and unlock
+            - listitem [ref=f9e90]: Can execute functions based on lock/unlock action
+            - listitem [ref=f9e91]: Can get lock history
+            - listitem [ref=f9e92]: Can request lock/unlock and accept or reject them
+            - listitem [ref=f9e93]: Can perform additional actions based on core actions.
+          - paragraph [ref=f9e94]: All these seem doable. As for the additional actions I can use Java Generic or my favorite event-driven messaging architecture. I have added the implementation using Java Generic at the end of the post.
+          - paragraph [ref=f9e95]:
+            - strong [ref=f9e96]: So what benefit did I get?
+            - text: For one thing, if in the future I am building simulation software for the house and room mentioned, I can just pick up the lock module and put it in the new project without any changes. Portable.
+          - list [ref=f9e97]:
+            - listitem [ref=f9e98]: The module is loosely coupled with the client.
+            - listitem [ref=f9e99]: Doesn’t violate the DRY.
+            - listitem [ref=f9e100]: The lock module can provide a tagging system for the client to create as many types of locks as it wants and clients can give meanings to them as they want. Scalable.
+            - listitem [ref=f9e101]: "All the logic related to locking and unlocking are in one place e.g.: the lock class. Encapsulation."
+            - listitem [ref=f9e102]: The lock module only knows how to do two things. Locs and unlock. It doesn’t know what is locking and unlocking. Also, the tasks related to lock/unlock action are the responsibility of the clients. Single Responsibility.
+            - listitem [ref=f9e103]: There is a strict line between the lock module and its clients. Clients don’t know the logic of the lock unlock mechanism and the lock module doesn’t know anything about the client. Separation of concerns.
+          - paragraph [ref=f9e104]: It seems the design has achieved all the stated design goals and use cases. But is it enough !!
+          - paragraph [ref=f9e105]:
+            - strong [ref=f9e106]: "So now what more the design can provide:"
+          - list [ref=f9e107]:
+            - listitem [ref=f9e108]: The lock module can add an owner and password system to verify the clients.
+            - listitem [ref=f9e109]: Going one step further the lock module can add security for each lock using the owner ID, and password.
+            - listitem [ref=f9e110]: It can provide a platform for clients to maintain their clients in the lock module. And those secondary clients can have specific permission for specific locks given by the primary clients.
+            - listitem [ref=f9e111]: The lock module can provide a scheduling system.
+          - paragraph [ref=f9e112]: The possibilities are endless. In this way, the lock module can become enterprise software by itself. And maintaining those design principles made all these possible.
+          - paragraph [ref=f9e113]:
+            - text: But what are the drawbacks?
+            - strong [ref=f9e114]: All designs have trade-offs.
+          - list [ref=f9e115]:
+            - listitem [ref=f9e116]: "Who is going to keep track of who is locking and unlocking, in general, the user ID of the clients? There are two solutions. The first one is obvious: clients will keep track of it. But it might break the DRY principle in the case of monolith but de facto choice in the case of microservices. Second, is the secondary client system mentioned above. The additional complexity and coding might not be warranted in most cases. So the compromise is that the lock module will provide a generic field whose data integrity and interpretation belongs to the client. It is not elegant but it is a trade-off."
+            - listitem [ref=f9e117]: The same goes for authorization or any other hierarchy that needs to be maintained. One example would be an office management system where files need multiple and ordered permissions to be unlocked. This can be done by the client submodule of the lock module.
+            - listitem [ref=f9e118]: Chain lock system. Locks need to be opened or closed in a particular order. This certainly should be the responsibility of the client. But if we want to add it to the lock module we can either add another class that stores the parent lock and their expected status or we can create a policy system.
+          - paragraph [ref=f9e119]: These are some of the issues and how to address them. Another thing to notice is that we did not need to modify the existing design, only extended it with new fields or classes. Thus preserving OCP.
+          - heading "Key takeaways:" [level=3] [ref=f9e120]
+          - list [ref=f9e121]:
+            - listitem [ref=f9e122]: Keep our eyes open. Take inspiration from the real world. Because it had thousands of years of experience and physical constraints to be modular.
+            - listitem [ref=f9e123]: Ignorance is bliss. Less we know who is going to use your module better.
+            - listitem [ref=f9e124]: Better to learn from other mistakes. We should try to maintain software principles like Encapsulation, DRY, SRP, and Separation of concerns. Developers who invented them had already crossed the muddy water.
+            - listitem [ref=f9e125]: Always have a plan. Our main job is the plan, not the code.
+          - paragraph [ref=f9e126]: This design has many flaws and certainly, my explanation has many logical flaws. I welcome all constructive criticism.On a final note, maintaining software principles might seem like a pain and it certainly is. In the real world, we might need to break them and we certainly do. But keeping them as our underlying guiding principles and striving towards achieving them is what differentiates between experienced and novice software engineers.
+          - paragraph [ref=f9e127]:
+            - text: "Project link:"
+            - link "https://github.com/Bitaron/Lock-Module (opens in a new window)" [ref=f9e128] [cursor=pointer]:
+              - /url: https://github.com/Bitaron/Lock-Module
+              - text: https://github.com/Bitaron/Lock-Module
+              - generic [ref=f9e129]: 
+              - generic [ref=f9e130]: (opens in a new window)
+        - generic [ref=f9e131]:
+          - generic [ref=f9e132]:
+            - generic [ref=f9e133]: 
+            - text: "Found this useful? Share:"
+          - link "Share on LinkedIn" [ref=f9e134] [cursor=pointer]:
+            - /url: https://www.linkedin.com/sharing/share-offsite/?url=http://0.0.0.0:4000/articles/software-design-principles-rules-that-guide-us/
+            - generic [ref=f9e135]: 
+            - text: LinkedIn
+          - link "Share on Bluesky" [ref=f9e136] [cursor=pointer]:
+            - /url: https://bsky.app/intent/compose?text=Software%20Design%20Principles:%20Rules%20that%20guide%20us%20http://0.0.0.0:4000/articles/software-design-principles-rules-that-guide-us/
+            - generic [ref=f9e137]: 
+            - text: Bluesky
+          - link "Share on X (Twitter)" [ref=f9e138] [cursor=pointer]:
+            - /url: https://twitter.com/intent/tweet?text=Software%20Design%20Principles:%20Rules%20that%20guide%20us&url=http://0.0.0.0:4000/articles/software-design-principles-rules-that-guide-us/
+            - generic [ref=f9e139]: 
+            - text: X
+          - button "Copy link" [ref=f9e140] [cursor=pointer]:
+            - generic [ref=f9e141]: 
+        - generic [ref=f9e143]:
+          - link "Software Design" [ref=f9e144] [cursor=pointer]:
+            - /url: /articles/#software-design
+            - generic [ref=f9e145]: 
+            - text: Software Design
+          - link "Software Development" [ref=f9e146] [cursor=pointer]:
+            - /url: /articles/#software-development
+            - generic [ref=f9e147]: 
+            - text: Software Development
+          - link "Software Engineering" [ref=f9e148] [cursor=pointer]:
+            - /url: /articles/#software-engineering
+            - generic [ref=f9e149]: 
+            - text: Software Engineering
+    - generic [ref=f9e150]:
+      - heading "Related Articles" [level=2] [ref=f9e152]
+      - generic [ref=f9e153]:
+        - generic [ref=f9e155]:
+          - 'img "Kubernetes Part 2: Installation" [ref=f9e156]'
+          - generic [ref=f9e157]:
+            - 'heading "Kubernetes Part 2: Installation" [level=5] [ref=f9e158]'
+            - paragraph [ref=f9e159]: A step-by-step production Kubernetes installation guide using Kubeadm, covering machine preparation, containerd, control-plane initialization, Cilium network...
+            - link "Read more" [ref=f9e160] [cursor=pointer]:
+              - /url: /articles/kubernetes-part-2-installation/
+        - generic [ref=f9e162]:
+          - 'img "Kubernetes Part 1 : Concepts" [ref=f9e163]'
+          - generic [ref=f9e164]:
+            - 'heading "Kubernetes Part 1 : Concepts" [level=5] [ref=f9e165]'
+            - paragraph [ref=f9e166]: Learn the essential Kubernetes and container-orchestration concepts behind a small team’s move into large-scale telecom infrastructure, from clusters and wor...
+            - link "Read more" [ref=f9e167] [cursor=pointer]:
+              - /url: /articles/kubernetes-part-1-concepts/
+        - generic [ref=f9e169]:
+          - img "The Soft in Software" [ref=f9e170]
+          - generic [ref=f9e171]:
+            - heading "The Soft in Software" [level=5] [ref=f9e172]
+            - paragraph [ref=f9e173]: Why software should remain adaptable rather than become rigid like hardware, and how architectural decisions preserve the “soft” quality that makes change pr...
+            - link "Read more" [ref=f9e174] [cursor=pointer]:
+              - /url: /articles/the-soft-in-software/
+  - contentinfo [ref=f9e175]:
+    - generic [ref=f9e177]:
+      - paragraph [ref=f9e178]: Sk. Kamruzzaman - 2026
+      - paragraph [ref=f9e179]:
+        - text: Based on
+        - link "Cirrus for Jekyll" [ref=f9e180] [cursor=pointer]:
+          - /url: https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll
+        - text: by
+        - link "Arnaud FERRIERE" [ref=f9e181] [cursor=pointer]:
+          - /url: https://surlesnuages.fr
