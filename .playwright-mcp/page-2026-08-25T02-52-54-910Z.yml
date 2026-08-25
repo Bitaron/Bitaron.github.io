@@ -1,0 +1,271 @@
+- generic [active] [ref=f12e1]:
+  - link "Skip to main content" [ref=f12e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f12e3]:
+    - link "Kamruzzaman" [ref=f12e4] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f12e5]: 
+      - text: Kamruzzaman
+    - generic [ref=f12e6]:
+      - list [ref=f12e7]:
+        - listitem [ref=f12e8]:
+          - link "Home" [ref=f12e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f12e10]:
+          - link "Résumé" [ref=f12e11] [cursor=pointer]:
+            - /url: /resume/
+        - listitem [ref=f12e12]:
+          - link "Articles" [ref=f12e13] [cursor=pointer]:
+            - /url: /articles/
+        - listitem [ref=f12e14]:
+          - link "About" [ref=f12e15] [cursor=pointer]:
+            - /url: /about/
+      - list [ref=f12e16]:
+        - listitem [ref=f12e17]:
+          - link "Open my LinkedIn profile" [ref=f12e18] [cursor=pointer]:
+            - /url: https://linkedin.com/in/bitaron
+            - generic [ref=f12e19]: 
+            - text: LinkedIn
+        - listitem [ref=f12e20]:
+          - link "Open my GitHub profile" [ref=f12e21] [cursor=pointer]:
+            - /url: https://github.com/Bitaron
+            - generic [ref=f12e22]: 
+            - text: GitHub
+        - listitem [ref=f12e23]:
+          - link "Send me an email" [ref=f12e24] [cursor=pointer]:
+            - /url: mailto:bitaron90@gmail.com
+            - generic [ref=f12e25]: 
+            - text: Contact
+        - listitem [ref=f12e26]:
+          - link "RSS feed" [ref=f12e27] [cursor=pointer]:
+            - /url: /feed.xml
+            - generic [ref=f12e28]: 
+            - text: RSS
+        - listitem [ref=f12e29]:
+          - button "Toggle dark mode" [ref=f12e30] [cursor=pointer]:
+            - generic [ref=f12e31]: 
+            - text: Theme
+  - main [ref=f12e32]:
+    - region [ref=f12e33]:
+      - generic [ref=f12e34]:
+        - generic [ref=f12e35]:
+          - paragraph [ref=f12e36]: SK. Kamruzzaman · Software Architect
+          - heading "Engineering resilient platforms" [level=1] [ref=f12e37]
+          - paragraph [ref=f12e38]: I architect backend systems, Kubernetes infrastructure, and full-stack products that stay dependable under real-world load.
+          - generic [ref=f12e39]:
+            - generic [ref=f12e40]:
+              - term [ref=f12e41]: Experience
+              - definition [ref=f12e42]: 10+ years
+            - generic [ref=f12e43]:
+              - term [ref=f12e44]: Leadership
+              - definition [ref=f12e45]: 6+ engineers
+            - generic [ref=f12e46]:
+              - term [ref=f12e47]: Reliability
+              - definition [ref=f12e48]: 99.9%+ uptime
+        - generic "Career summary" [ref=f12e50]:
+          - code [ref=f12e51]: "kamruzzaman@platforms:~$ status --career role: software architect focus: backend architecture · high-availability systems · leadership experience: 10+ years shipping production platforms strength: architecture decisions · Kubernetes · Spring Boot · React delivery: automated pipelines · clean boundaries · recovery paths impact: enterprise platforms used by millions of people principle: remove single points of failure availability: resilient by design kamruzzaman@platforms:~$"
+        - region "Latest articles" [ref=f12e53]:
+          - generic [ref=f12e54]:
+            - heading "Latest writing" [level=2] [ref=f12e55]
+            - link "All articles" [ref=f12e56] [cursor=pointer]:
+              - /url: /articles/
+          - article [ref=f12e57]:
+            - generic [ref=f12e58]:
+              - generic [ref=f12e59]: LOG 1
+              - generic [ref=f12e60]: 
+            - paragraph [ref=f12e61]: 18 Apr 2026 · 5 min read
+            - heading [level=3] [ref=f12e62]:
+              - 'link "Kubernetes Part 2: Installation" [ref=f12e63] [cursor=pointer]':
+                - /url: /articles/kubernetes-part-2-installation/
+            - paragraph [ref=f12e64]: A step-by-step production Kubernetes installation guide using Kubeadm, covering machine preparation, containerd, control-plane initialization, Cili...
+            - generic [ref=f12e65]:
+              - generic [ref=f12e66]: DevOps
+              - generic [ref=f12e67]: Kubernetes
+          - article [ref=f12e68]:
+            - generic [ref=f12e69]:
+              - generic [ref=f12e70]: LOG 2
+              - generic [ref=f12e71]: 
+            - paragraph [ref=f12e72]: 14 Apr 2026 · 6 min read
+            - heading [level=3] [ref=f12e73]:
+              - 'link "Kubernetes Part 1 : Concepts" [ref=f12e74] [cursor=pointer]':
+                - /url: /articles/kubernetes-part-1-concepts/
+            - paragraph [ref=f12e75]: Learn the essential Kubernetes and container-orchestration concepts behind a small team’s move into large-scale telecom infrastructure, from cluste...
+            - generic [ref=f12e76]:
+              - generic [ref=f12e77]: Kubernetes
+              - generic [ref=f12e78]: DevOps
+          - article [ref=f12e79]:
+            - generic [ref=f12e80]:
+              - generic [ref=f12e81]: LOG 3
+              - generic [ref=f12e82]: 
+            - paragraph [ref=f12e83]: 16 Sep 2025 · 5 min read
+            - heading [level=3] [ref=f12e84]:
+              - link "The Soft in Software" [ref=f12e85] [cursor=pointer]:
+                - /url: /articles/the-soft-in-software/
+            - paragraph [ref=f12e86]: Why software should remain adaptable rather than become rigid like hardware, and how architectural decisions preserve the “soft” quality that makes...
+            - generic [ref=f12e87]:
+              - generic [ref=f12e88]: Software Architecture
+              - generic [ref=f12e89]: Software Development
+          - article [ref=f12e90]:
+            - generic [ref=f12e91]:
+              - generic [ref=f12e92]: LOG 4
+              - generic [ref=f12e93]: 
+            - paragraph [ref=f12e94]: 21 Dec 2023 · 8 min read
+            - heading [level=3] [ref=f12e95]:
+              - 'link "Requirement Analysis: Peeking into the Future" [ref=f12e96] [cursor=pointer]':
+                - /url: /articles/requirement-analysis-peeking-into-the-future/
+            - paragraph [ref=f12e97]: Turn abstract requirements into concrete software design through a practical education-system example that moves from client needs to a tabulation-...
+            - generic [ref=f12e98]:
+              - generic [ref=f12e99]: Software Development
+              - generic [ref=f12e100]: Committee Module
+          - article [ref=f12e101]:
+            - generic [ref=f12e102]:
+              - generic [ref=f12e103]: LOG 5
+              - generic [ref=f12e104]: 
+            - paragraph [ref=f12e105]: 14 Dec 2023 · 8 min read
+            - heading [level=3] [ref=f12e106]:
+              - 'link "Software Design Principles: Rules that guide us" [ref=f12e107] [cursor=pointer]':
+                - /url: /articles/software-design-principles-rules-that-guide-us/
+            - paragraph [ref=f12e108]: Use a simple lock-module example to see how encapsulation, DRY, single responsibility, separation of concerns, and open-closed design guide practic...
+            - generic [ref=f12e109]:
+              - generic [ref=f12e110]: Software Design
+              - generic [ref=f12e111]: Software Development
+        - complementary "Writing signals" [ref=f12e112]:
+          - generic [ref=f12e113]:
+            - generic [ref=f12e114]: 
+            - text: Writing signals
+          - generic [ref=f12e115]:
+            - generic [ref=f12e116]: High-availability patterns
+            - generic [ref=f12e117]: Production observability
+            - generic [ref=f12e118]: Clean architecture
+            - generic [ref=f12e119]: Automated delivery
+            - generic [ref=f12e120]: Engineering leadership
+            - generic [ref=f12e121]: Recovery-first design
+            - generic [ref=f12e122]: High-availability patterns
+            - generic [ref=f12e123]: Production observability
+            - generic [ref=f12e124]: Clean architecture
+            - generic [ref=f12e125]: Automated delivery
+            - generic [ref=f12e126]: Engineering leadership
+            - generic [ref=f12e127]: Recovery-first design
+        - generic [ref=f12e128]:
+          - link "Open résumé" [ref=f12e129] [cursor=pointer]:
+            - /url: /resume/
+          - link "Browse articles" [ref=f12e130] [cursor=pointer]:
+            - /url: /articles/
+    - generic [ref=f12e133]:
+      - generic [ref=f12e134]:
+        - heading "Contact" [level=2] [ref=f12e135]
+        - paragraph [ref=f12e136]: The fastest way to reach me is by email or LinkedIn.
+      - generic [ref=f12e137]:
+        - link "Email Kamruzzaman" [ref=f12e138] [cursor=pointer]:
+          - /url: mailto:bitaron90@gmail.com
+        - link "LinkedIn profile" [ref=f12e139] [cursor=pointer]:
+          - /url: https://linkedin.com/in/bitaron
+    - region "Article index" [ref=f12e140]:
+      - generic [ref=f12e141]:
+        - generic [ref=f12e143] [cursor=pointer]:
+          - 'img "Kubernetes Part 2: Installation" [ref=f12e144]'
+          - generic [ref=f12e145]:
+            - heading [level=3] [ref=f12e146]:
+              - 'link "Kubernetes Part 2: Installation" [ref=f12e147]':
+                - /url: /articles/kubernetes-part-2-installation/
+            - paragraph [ref=f12e148]: A step-by-step production Kubernetes installation guide using Kubeadm, covering machine preparation, containerd, control-plane initialization, Cilium network...
+            - paragraph [ref=f12e149]:
+              - text: "Published: 04/18/2026 ·"
+              - generic [ref=f12e150]: 
+              - text: 5 min
+        - generic [ref=f12e152] [cursor=pointer]:
+          - 'img "Kubernetes Part 1 : Concepts" [ref=f12e153]'
+          - generic [ref=f12e154]:
+            - heading [level=3] [ref=f12e155]:
+              - 'link "Kubernetes Part 1 : Concepts" [ref=f12e156]':
+                - /url: /articles/kubernetes-part-1-concepts/
+            - paragraph [ref=f12e157]: Learn the essential Kubernetes and container-orchestration concepts behind a small team’s move into large-scale telecom infrastructure, from clusters and wor...
+            - paragraph [ref=f12e158]:
+              - text: "Published: 04/14/2026 ·"
+              - generic [ref=f12e159]: 
+              - text: 6 min
+        - generic [ref=f12e161] [cursor=pointer]:
+          - img "The Soft in Software" [ref=f12e162]
+          - generic [ref=f12e163]:
+            - heading [level=3] [ref=f12e164]:
+              - link "The Soft in Software" [ref=f12e165]:
+                - /url: /articles/the-soft-in-software/
+            - paragraph [ref=f12e166]: Why software should remain adaptable rather than become rigid like hardware, and how architectural decisions preserve the “soft” quality that makes change pr...
+            - paragraph [ref=f12e167]:
+              - text: "Published: 09/16/2025 ·"
+              - generic [ref=f12e168]: 
+              - text: 5 min
+        - generic [ref=f12e170] [cursor=pointer]:
+          - 'img "Requirement Analysis: Peeking into the Future" [ref=f12e171]'
+          - generic [ref=f12e172]:
+            - heading [level=3] [ref=f12e173]:
+              - 'link "Requirement Analysis: Peeking into the Future" [ref=f12e174]':
+                - /url: /articles/requirement-analysis-peeking-into-the-future/
+            - paragraph [ref=f12e175]: Turn abstract requirements into concrete software design through a practical education-system example that moves from client needs to a tabulation-committee ...
+            - paragraph [ref=f12e176]:
+              - text: "Published: 12/21/2023 ·"
+              - generic [ref=f12e177]: 
+              - text: 8 min
+        - generic [ref=f12e179] [cursor=pointer]:
+          - 'img "Software Design Principles: Rules that guide us" [ref=f12e180]'
+          - generic [ref=f12e181]:
+            - heading [level=3] [ref=f12e182]:
+              - 'link "Software Design Principles: Rules that guide us" [ref=f12e183]':
+                - /url: /articles/software-design-principles-rules-that-guide-us/
+            - paragraph [ref=f12e184]: Use a simple lock-module example to see how encapsulation, DRY, single responsibility, separation of concerns, and open-closed design guide practical softwar...
+            - paragraph [ref=f12e185]:
+              - text: "Published: 12/14/2023 ·"
+              - generic [ref=f12e186]: 
+              - text: 8 min
+    - complementary [ref=f12e187]:
+      - heading "Search articles" [level=3] [ref=f12e189]
+      - generic [ref=f12e190]: Search articles
+      - textbox "Search articles" [ref=f12e191]:
+        - /placeholder: Type your search...
+      - generic [ref=f12e192]:
+        - link "Committee Module 1" [ref=f12e193] [cursor=pointer]:
+          - /url: /articles/#committee-module
+          - text: Committee Module
+          - generic [ref=f12e194]: "1"
+        - link "Container Orchestration 2" [ref=f12e195] [cursor=pointer]:
+          - /url: /articles/#container-orchestration
+          - text: Container Orchestration
+          - generic [ref=f12e196]: "2"
+        - link "DevOps 2" [ref=f12e197] [cursor=pointer]:
+          - /url: /articles/#devops
+          - text: DevOps
+          - generic [ref=f12e198]: "2"
+        - link "Kubernetes 2" [ref=f12e199] [cursor=pointer]:
+          - /url: /articles/#kubernetes
+          - text: Kubernetes
+          - generic [ref=f12e200]: "2"
+        - link "Software 1" [ref=f12e201] [cursor=pointer]:
+          - /url: /articles/#software
+          - text: Software
+          - generic [ref=f12e202]: "1"
+        - link "Software Architecture 4" [ref=f12e203] [cursor=pointer]:
+          - /url: /articles/#software-architecture
+          - text: Software Architecture
+          - generic [ref=f12e204]: "4"
+        - link "Software Design 1" [ref=f12e205] [cursor=pointer]:
+          - /url: /articles/#software-design
+          - text: Software Design
+          - generic [ref=f12e206]: "1"
+        - link "Software Development 3" [ref=f12e207] [cursor=pointer]:
+          - /url: /articles/#software-development
+          - text: Software Development
+          - generic [ref=f12e208]: "3"
+        - link "Software Engineering 5" [ref=f12e209] [cursor=pointer]:
+          - /url: /articles/#software-engineering
+          - text: Software Engineering
+          - generic [ref=f12e210]: "5"
+  - contentinfo [ref=f12e211]:
+    - generic [ref=f12e213]:
+      - paragraph [ref=f12e214]: Sk. Kamruzzaman - 2026
+      - paragraph [ref=f12e215]:
+        - text: Based on
+        - link "Cirrus for Jekyll" [ref=f12e216] [cursor=pointer]:
+          - /url: https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll
+        - text: by
+        - link "Arnaud FERRIERE" [ref=f12e217] [cursor=pointer]:
+          - /url: https://surlesnuages.fr
